@@ -1,0 +1,22 @@
+pra eu nao esquecer:				| 
+(!x && y) || (x && !y)				| 
+(x' .  y) +  (x  . y')				|
+						|
+not(!) == '					|
+and(&&) == .					|
+or(||) == +					|
+						|
+MIN_T = termos iguais a 1 na disj das conj (SoP)|
+MAX_T = termos iguais a 0 na conj das disj (PoS)|
+entao basicamente, swap(., +) e vice versa      |
+________________________________________________|
+3 termos, 2x2x2 opcoes possibilidades diferentes... 
+4 termos, 2x2x2x2 (2^4) e por ai vai...
+
+espero que essa nao precise de tabela
+2- 
+a.) x . ( x' + y' )'                -------->   x . (x + y)
+b.) ( x' + y' ) + ( x' . y )        -------->   (x + y)' + (x' . y)
+c.) ( x' . y' )' . ( x' + y' )      -------->   (x . y)  . (x + y)' 
+d.) ( x . y' )' + ( x + y' )'       -------->   (x' . y)
+e.) ( y' + x )' . ( y' + x )        -------->   (y + x') . (y' + x) 
