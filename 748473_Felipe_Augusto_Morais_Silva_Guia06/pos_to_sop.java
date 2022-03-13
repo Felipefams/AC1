@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class logicalParser{    
+public class pos_to_sop{
     /**
      * programa pra trocar os . por + pra quando for MAXTERMO e nao MINITERMO
      * acabou nao dando tempo de fazer, mas vou escrever um pra fazer os testes automaticos em verilog...

@@ -1,5 +1,5 @@
 //Code by Felipe Augusto Morais Silva. 
-//sera q da pra fazer um transpiler de expressao logica pra codigo em verilog? to pensando seriamenten nessa hipotese
+//sera q da pra fazer um parser de expressao logica pra codigo em verilog? to pensando seriamenten nessa hipotese
 
 module f5a ( output s,input x,input y, input z );
 // // definir dado local
