@@ -30,7 +30,7 @@ f5b moduloB ( b, x, y, z);
 // ------------------------- parte principal
 initial
 begin : main
-$display("Exemplo_0501 - xxx yyy zzz - 999999");
+$display("Exemplo_0605 -Felipe Augusto Morais Silva - 748473");
 $display("Test module");
 // projetar testes do modulo
 $display("   x    y    z =   r1   r2");
