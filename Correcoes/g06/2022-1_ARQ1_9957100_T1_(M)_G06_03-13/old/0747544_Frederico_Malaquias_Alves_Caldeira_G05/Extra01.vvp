@@ -1,0 +1,80 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\Users\fredi\DOCUME~2\PUCMinas\AC1\2022-1~1\PROGRA~1\ICARUS~1\lib\ivl\system.vpi";
+:vpi_module "C:\Users\fredi\DOCUME~2\PUCMinas\AC1\2022-1~1\PROGRA~1\ICARUS~1\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\Users\fredi\DOCUME~2\PUCMinas\AC1\2022-1~1\PROGRA~1\ICARUS~1\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\Users\fredi\DOCUME~2\PUCMinas\AC1\2022-1~1\PROGRA~1\ICARUS~1\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\Users\fredi\DOCUME~2\PUCMinas\AC1\2022-1~1\PROGRA~1\ICARUS~1\lib\ivl\va_math.vpi";
+S_000002d0fd0c4bf0 .scope module, "test_f5" "test_f5" 2 19;
+ .timescale 0 0;
+v000002d0fd0d2c10_0 .net "a", 0 0, L_000002d0fd0d3d60;  1 drivers
+v000002d0fd0d2cb0_0 .net "b", 0 0, L_000002d0fd0d3fd0;  1 drivers
+v000002d0fd0d3020_0 .var "x", 0 0;
+v000002d0fd0d3340_0 .var "y", 0 0;
+S_000002d0fd0c4810 .scope begin, "main" "main" 2 28, 2 28 0, S_000002d0fd0c4bf0;
+ .timescale 0 0;
+S_000002d0fd0d6550 .scope module, "moduloA" "f5a" 2 24, 2 6 0, S_000002d0fd0c4bf0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_000002d0fd0d69b0 .functor NAND 1, v000002d0fd0d3020_0, C4<1>, C4<1>, C4<1>;
+L_000002d0fd0d3d60 .functor AND 1, L_000002d0fd0d69b0, v000002d0fd0d3340_0, C4<1>, C4<1>;
+v000002d0fd0a3360_0 .net "a", 0 0, v000002d0fd0d3020_0;  1 drivers
+v000002d0fd0d4900_0 .net "b", 0 0, v000002d0fd0d3340_0;  1 drivers
+v000002d0fd0a3140_0 .net "nand_a", 0 0, L_000002d0fd0d69b0;  1 drivers
+v000002d0fd0d5b50_0 .net "s", 0 0, L_000002d0fd0d3d60;  alias, 1 drivers
+S_000002d0fd0d66e0 .scope module, "moduloB" "f5b" 2 25, 2 13 0, S_000002d0fd0c4bf0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_000002d0fd0d3dd0 .functor NOT 1, v000002d0fd0d3020_0, C4<0>, C4<0>, C4<0>;
+L_000002d0fd0d3ed0 .functor NOT 1, v000002d0fd0d3340_0, C4<0>, C4<0>, C4<0>;
+L_000002d0fd0d3fd0 .functor AND 1, L_000002d0fd0d3dd0, L_000002d0fd0d3ed0, C4<1>, C4<1>;
+v000002d0fd0a2e90_0 .net *"_ivl_0", 0 0, L_000002d0fd0d3dd0;  1 drivers
+v000002d0fd1bbd30_0 .net *"_ivl_2", 0 0, L_000002d0fd0d3ed0;  1 drivers
+v000002d0fd1bbdd0_0 .net "a", 0 0, v000002d0fd0d3020_0;  alias, 1 drivers
+v000002d0fd0d6870_0 .net "b", 0 0, v000002d0fd0d3340_0;  alias, 1 drivers
+v000002d0fd0d6910_0 .net "s", 0 0, L_000002d0fd0d3fd0;  alias, 1 drivers
+    .scope S_000002d0fd0c4bf0;
+T_0 ;
+    %fork t_1, S_000002d0fd0c4810;
+    %jmp t_0;
+    .scope S_000002d0fd0c4810;
+t_1 ;
+    %vpi_call 2 29 "$display", "Exemplo_0505 - Frederico_Malaquias - 05/03/22" {0 0 0};
+    %vpi_call 2 30 "$display", "Test module" {0 0 0};
+    %vpi_call 2 31 "$display", " x y a b" {0 0 0};
+    %vpi_call 2 33 "$monitor", "%4b %4b %4b %4b", v000002d0fd0d3020_0, v000002d0fd0d3340_0, v000002d0fd0d2c10_0, v000002d0fd0d2cb0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002d0fd0d3020_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002d0fd0d3340_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002d0fd0d3020_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002d0fd0d3340_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002d0fd0d3020_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002d0fd0d3340_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002d0fd0d3020_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002d0fd0d3340_0, 0, 1;
+    %end;
+    .scope S_000002d0fd0c4bf0;
+t_0 %join;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Extra01.v";

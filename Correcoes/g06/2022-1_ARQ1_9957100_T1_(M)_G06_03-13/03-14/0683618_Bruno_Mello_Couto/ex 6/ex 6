@@ -1,0 +1,19 @@
+06.) Identificar as equações características dos circuitos lógicos abaixo e
+simplifica-las pelo mapa de Veitch-Karnaugh usando MAXTERMOS.
+Descrever e simular o circuito simplificado em Verilog e Logisim.
+
+(~(~x | ~y | ~w)& ~(~w & y & x))| ~((z & w & y)|(~x))
+
+       W      W     W'    W'
+    XY\WZ|   00 |  01    11   10
+     ----|------|------|-----|------
+ X    00 | 0 (0)| 0 (1)| 0(3)| 0(2)     Y  
+     ----|------|------|-----|-------
+ X    01 |  0(4)|  0(5)| 0(7)| 0(6)     Y'
+     ----|------|------|-----|------
+ X'   11 | 1(12)| 1(13)|1(15)|1(14)     Y'  
+     ----|------|------|-----|---------
+ X'   10 | 0 (8)| 1 (9)|1(11)| 1(10)    Y
+            Z     Z'      Z'      Z
+            
+ resposta: simplificada= (X).(Y+Z+W)

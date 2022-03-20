@@ -1,0 +1,73 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\ICARUS~1\lib\ivl\system.vpi";
+:vpi_module "C:\ICARUS~1\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\ICARUS~1\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\ICARUS~1\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\ICARUS~1\lib\ivl\va_math.vpi";
+S_00000130adf08450 .scope module, "Exemplo_0506" "Exemplo_0506" 2 5;
+ .timescale 0 0;
+v00000130adf0a970_0 .var "a", 0 0;
+v00000130adf0aa10_0 .var "b", 0 0;
+v00000130adf53ec0_0 .net "s", 0 0, L_00000130adf0ac70;  1 drivers
+S_00000130adf08960 .scope begin, "main" "main" 2 11, 2 11 0, S_00000130adf08450;
+ .timescale 0 0;
+S_00000130adf224d0 .scope module, "myModule" "negation_of_exclusive_disjunction" 2 8, 2 1 0, S_00000130adf08450;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_00000130adf22b80 .functor NOT 1, v00000130adf0aa10_0, C4<0>, C4<0>, C4<0>;
+L_00000130adf0aab0 .functor AND 1, v00000130adf0a970_0, L_00000130adf22b80, C4<1>, C4<1>;
+L_00000130adf0ab20 .functor NOT 1, v00000130adf0a970_0, C4<0>, C4<0>, C4<0>;
+L_00000130adf0ab90 .functor AND 1, L_00000130adf0ab20, v00000130adf0aa10_0, C4<1>, C4<1>;
+L_00000130adf0ac00 .functor OR 1, L_00000130adf0aab0, L_00000130adf0ab90, C4<0>, C4<0>;
+L_00000130adf0ac70 .functor NOT 1, L_00000130adf0ac00, C4<0>, C4<0>, C4<0>;
+v00000130adf22da0_0 .net *"_ivl_0", 0 0, L_00000130adf22b80;  1 drivers
+v00000130adf22fc0_0 .net *"_ivl_2", 0 0, L_00000130adf0aab0;  1 drivers
+v00000130adf56210_0 .net *"_ivl_4", 0 0, L_00000130adf0ab20;  1 drivers
+v00000130adf22660_0 .net *"_ivl_6", 0 0, L_00000130adf0ab90;  1 drivers
+v00000130adf22700_0 .net *"_ivl_8", 0 0, L_00000130adf0ac00;  1 drivers
+v00000130adf227a0_0 .net "a", 0 0, v00000130adf0a970_0;  1 drivers
+v00000130adf22840_0 .net "b", 0 0, v00000130adf0aa10_0;  1 drivers
+v00000130adf228e0_0 .net "s", 0 0, L_00000130adf0ac70;  alias, 1 drivers
+    .scope S_00000130adf08450;
+T_0 ;
+    %fork t_1, S_00000130adf08960;
+    %jmp t_0;
+    .scope S_00000130adf08960;
+t_1 ;
+    %vpi_call 2 12 "$display", "Exemplo_0506 - Luan_Tadeu - 750470" {0 0 0};
+    %vpi_call 2 13 "$display", "   a    b    s" {0 0 0};
+    %vpi_call 2 15 "$monitor", "%4b %4b %4b", v00000130adf0a970_0, v00000130adf0aa10_0, v00000130adf53ec0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000130adf0a970_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000130adf0aa10_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000130adf0a970_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000130adf0aa10_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000130adf0a970_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000130adf0aa10_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000130adf0a970_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000130adf0aa10_0, 0, 1;
+    %end;
+    .scope S_00000130adf08450;
+t_0 %join;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Exemplo_0506.v";

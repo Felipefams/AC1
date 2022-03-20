@@ -1,0 +1,173 @@
+Euller Magela Nunes Silva - 713924
+
+01.) Determinar os complementos para os valores e as quantidades de bits indicadas:
+DICA: Ajustar primeiro o tamanho, antes de calcular o complemento (C1,n ou C2,n).
+01a.) manualmente
+a.) C1,6 (1011(2)) = X(2)
+    
+	1011 = 001011 = C1 110100
+
+b.) C1,8 (1010(2)) = X(2)
+
+	1010 = 00001010 =  11110101(C1)
+
+c.) C2,6 (110011(2)) = X(2)
+        110011 = 001100(C1) = 001100 + 1 = 001101 (C2)
+
+d.) C2,7 (10111(2)) = X(2)
+	10111 = 0010111    = 1101000(C1) = 1101000 + 1 = 1101001(C2)
+
+e.) C2,8 (110101(2)) = X(2)
+        110101 = 00110101  = 11001010(C1) = 11001010 + 1 = 11001011(C2)
+
+
+02.) Determinar os complementos para os valores e as quantidades indicadas:
+DICA: Para valores em outras bases, converter para binário, primeiro;
+ encontrar a representação em complemento, e retornar à base,
+ caso necessário.
+2a.) manualmente
+a.) C1,6 (213(4)) = X(2)
+    
+	213(4) =  [2] [1] [3] = 100111(2)    = 011000 (C1)
+                  10  01  11
+
+b.) C1,8 (6D(16)) = X(2)
+        6D(16) =   [6]  [D]   =  01101101(2) = 10010010(C1)
+                  0110  1101
+
+c.) C2,6 (321(4)) = X(2)
+        321(4) =  [3] [2] [1] = 111001(2) = 000110(C1) = 000110 + 1 = 000111(C2)
+                   11  10  01
+
+d.) C2,7 (175(8)) = X(2)
+        175(8) =  [1]  [7]  [5] = 001111101(2) = 1111101(2) = 0000010(C1) + 1 = 0000011(C2)
+                  001  111  101
+
+e.) C2,8 (F4(16)) = X(2)
+
+	F4(16) =  [F]   [4]    = 11110100(2) = 00001011(C1) = 00001011 + 1 = 00001100(C2)
+                 1111   0100
+
+03.) Determinar os valores positivos equivalentes aos complementos de dois indicados:
+ DICA: Subtrair uma unidade, antes de inverter cada bit.
+03a.) manualmente
+a.) 10101(2) = X(10)
+    10101 = 10100 = 01011 = 11(10)
+
+b.) 110111(2) = X(10)
+    110111 = 110110 = 001001 = 9(10)
+
+c.) 110010(2) = X(2)
+    110010 = 110001 = 001110(2)
+
+d.) 1011101(2) = X(2)
+    1011101 = 1011100 = 0100011(2)
+
+e.) 10110101(2) = X(16)
+    10110101 = 10110100 = 01001011 = [0100][1011] = 4B(16)
+ 
+04.) Fazer as operações indicadas mediante uso de complemento de dois:
+DICA: Levar todas as representações para binário, com a mesma quantidade de bits,
+ a menor necessária para acomodar a parte significativa e o sinal.
+ Substituir apenas os subtraendos pelos complementos equivalentes e somar.
+ Voltar os resultados às bases originais.
+04a.) manualmente
+a.) 11100(2) - 1101(2) = X(2)
+    
+    11100        1101 = 0010 + 1 = 0011
+   +10011
+   -------
+    01111
+
+b.) 101,1001(2) - 10,01(2) = X(2) (OBS.: Alinhar as vírgulas, primeiro, antes de operar)
+    
+	101,1001      10,01 = 010,0100 = 101,1011 + 1 = 101,1100
+       +101,1100
+	---------
+        011,0101
+
+c.) 213(4) - 123(4) = X(4)
+
+    213(4) = 100111(2)
+    123(4) = 011011(2) = 100100(c1) + 1 = 100101(c2)
+
+  	100111
+      + 100101
+       --------
+       001100 = 30(4)
+
+d.) 312(8) - 123(8) = X(8)
+
+    312(8) = 011001010(2)
+    123(8) = 001010011(2) = 110101100(c1) + 1 = 110101101(c2)
+  
+	011001010
+       +110101101
+       -----------
+        001110111 = 167(8)
+
+
+e.) 9D1(16) - A1B(16) = X(16)
+    
+    9D1(16) = 1001 1101 0001(2)
+    A1B(16) = 1010 0001 1011(2) = 010111100100 + 1 = 010111100101(C2)
+
+    100111010001
+   +010111100101
+	
+05.) Executar as operações abaixo,
+armazenar seus dados e resultados em registradores de 8 bits,
+mostrar os valores resultantes em binário, e usar complemento de 2 nas subtrações:
+05a.) manualmente
+a.) 101100(2) – 1101(2)
+
+    101100 = 00101100 
+    1101 = 00001101 = 11110010 + 1 = 11110011
+   
+    00101100
+   +11110011
+    --------
+    00011111
+ 
+
+b.) 101,1010(2) – 2,3(8)
+    
+    101,1010 = 0101,1010
+    2,3(8)   = 0010,0110 = 11011001 + 1 = 11011010(c2)
+
+    01011010
+   +11011010
+   ---------
+    00110100
+
+
+c.) 231(4) – F(16)
+    231(4) = 00101101(2)
+      F(16)= 00001111(2) = 11110000(c1) + 1 = 11110001(c2)
+ 
+   00101101
+  +11110001
+  ----------
+   00011110
+
+d.) DC(16 ) – 1001011(2)
+    DC(16) = 11011100(2)
+    1001011 = 01001011 = 10110100(c1) + 1 = 10110101(c2)
+  
+    11011100
+   +10110101
+   ---------
+    10010001
+
+
+e.) 36(10) – 2B(16)
+
+    36(10) = 100100 = 00100100
+    2B(16) = 00101011 = 11010100(C1) + 1 = 11010101(c2)
+
+    00100100
+   +11010101
+   ---------
+    11111001
+
+

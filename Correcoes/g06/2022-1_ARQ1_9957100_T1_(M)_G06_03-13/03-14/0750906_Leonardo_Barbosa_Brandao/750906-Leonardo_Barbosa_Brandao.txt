@@ -1,0 +1,692 @@
+01.) Montar o mapa de Veitch-Karnaugh e simplificar as funções lógicas abaixo e 
+verificar pelas respectivas tabelas-verdades implementadas em Verilog e/ou Logisim:
+
+a) f(x,y,z) = ∑m ( 1, 5, 7 )
+
+x\yz  00     01     11     10
+0      0      1      0      0
+1      0      1      1      0
+
+Grupos:
+               1      5 
+par (m1,m5): x'y'z + xy'z  = (y'z) . (x'+x) = (y'z) . (1) = y'z 
+
+              5      7
+par (m5,m7): xy'z + xyz = (xz).(y'+y) = (xz).1 = xz
+
+Expressão simplificada por mintermos: y'z + xz
+
+f(x,y,z) = ∑m ( 1, 5, 7 ) = x'y'z + xy'z + xyz = y'z + xz
+
+Implementação em Verilog com módulos definidos por expressão:
+module f1a (output s, 
+            input x, y, z);
+	assign s = ~y&z | x&z;
+endmodule
+
+b) f(x,y,z) = ∑m ( 2, 3, 6 )
+
+x\yz  00     01     11     10
+0      0      0      1      1
+1      0      0      0      1
+
+Grupos:
+               3      2 
+par (m3,m2): x'yz + x'yz'  = (x'y) . (z+z') = (x'y) . (1) = x'y 
+
+              2       6
+par (m2,m6): x'yz' + xyz' = (yz').(x'+x) = (yz').(1) = yz'
+
+Expressão simplificada por mintermos: x'y + yz'
+
+f(x,y,z) = ∑m ( 2, 3, 6 ) = x'yz' + x'yz + xyz' = x'y + yz'
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f1b (output s, 
+            input x, y, z);
+	assign s = ~x&y | y&~z;
+endmodule
+
+c) f(x,y,z) = ∑m ( 2, 4, 6, 7 )
+
+x\yz  00     01     11     10
+0      0      0      0      1
+1      1      0      1      1
+
+Grupos:
+               2      6 
+par (m2,m6): x'yz' + xyz'  = (yz') . (x'+x) = (yz') . (1) = yz' 
+
+              7     6
+par (m7,m6): xyz + xyz' = (xy).(z+z') = (xy).(1) = xy
+
+              4       6
+par (m4,m6): xy'z' + xyz' = (xz').(y'+y) = (xz').(1) = xz'
+
+Expressão simplificada por mintermos: yz' + xy + xz'
+
+f(x,y,z) = ∑m ( 2, 4, 6, 7 ) = x'yz' + xy'z' + xyz' + xyz = yz' + xy + xz'
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f1c (output s, 
+            input x, y, z);
+	assign s = y&~z | x&y | x&~z;
+endmodule
+
+d) f(x,y,z) = ∑m ( 1, 2, 3, 6 )
+
+x\yz  00     01     11     10
+0      0      1      1      1
+1      0      0      0      1
+
+Grupos:
+               1      3 
+par (m1,m3): x'y'z + x'yz  = (x'z) . (y'+y) = (x'z) . (1) = x'z 
+ 
+               3      2 
+par (m3,m2): x'yz + x'yz'  = (x'y) . (z+z') = (x'y) . (1) = x'y 
+
+               2      6 
+par (m2,m6): x'yz' + xyz'  = (yz') . (x'+x) = (yz') . (1) = yz' 
+
+Expressão simplificada por mintermos: x'z + x'y + yz'
+
+f(x,y,z) = ∑m ( 1, 2, 3, 6 ) = x'y'z + x'yz' + x'yz + xyz' = x'z + x'y + yz'
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f1d (output s, 
+            input x, y, z);
+	assign s = ~x&z | ~x&y | y&~z;
+endmodule
+
+e) f(x,y,z) = ∑m ( 0, 2, 5, 7 )
+
+x\yz  00     01     11     10
+0      1      0      0      1
+1      0      1      1      0
+
+Grupos:
+               0        2 
+par (m0,m2): x'y'z' + x'yz'  = (x'z') . (y'+y) = (x'z') . (1) = x'z' 
+ 
+               5      7
+par (m5,m7): xy'z + xyz = (xz).(y'+y) = (xz).1 = xz
+
+Expressão simplificada por mintermos: x'z' + xz
+
+f(x,y,z) = ∑m ( 0, 2, 5, 7 ) = x'y'z' + x'yz' + xy'z + xyz = x'z' + xz
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f1e (output s, 
+            input x, y, z);
+	assign s = ~x&~z | x&z;
+endmodule
+
+################################################################################################
+
+02.) Montar o mapa de Veitch-Karnaugh e simplificar as funções lógicas abaixo por MAXTERMOS
+e verificar pelas respectivas tabelas-verdades implementadas em Verilog e/ou Logisim:
+
+a) F(X,Y,Z) = πM ( 4, 6, 7 )
+
+X\YZ  00     01     11     10
+0      1      1      1      1
+1      0      1      0      0
+
+Grupos:
+                 4        6 
+par (M4,M6): (X'+Y+Z).(X'+Y'+Z) = (X'+Z) + (Y.Y') = (X'+Z) + (0) = X'+Z 
+ 
+                 7          6
+par (M7,M6): (X'+Y'+Z').(X'+Y'+Z) = (X'+Y') + (Z'.Z) = (X'+Y') + (0) = X'+Y'
+
+Expressão simplificada por MAXTERMOS: (X'+Z).(X'+Y')
+
+F(X,Y,Z) = πM ( 4, 6, 7 ) = (X'+Y+Z).(X'+Y'+Z).(X'+Y'+Z') = (X'+Z).(X'+Y')
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f2a (output S, 
+            input X, Y, Z);
+	assign S = (~X|Z) & (~X|~Y);
+endmodule
+
+b) F(X,Y,Z) = πM ( 1, 5, 7 )
+
+X\YZ  00     01     11     10
+0      1      0      1      1
+1      1      0      0      1
+
+Grupos:
+                 1        5 
+par (M1,M5): (X+Y+Z').(X'+Y+Z') = (Y+Z') + (X.X') = (Y+Z') + (0) = Y+Z' 
+ 
+                 5          7
+par (M5,M7): (X'+Y+Z').(X'+Y'+Z') = (X'+Z') + (Y.Y') = (X'+Z') + (0) = X'+Z'
+
+Expressão simplificada por MAXTERMOS: (Y+Z').(X'+Z')
+
+F(X,Y,Z) = πM ( 1, 5, 7 ) = (X+Y+Z').(X'+Y+Z').(X'+Y'+Z') = (Y+Z').(X'+Z')
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f2b (output S, 
+            input X, Y, Z);
+	assign S = (Y|~Z) & (~X|~Z);
+endmodule 
+
+c) F(X,Y,Z) = πM ( 1, 2, 3, 5 )
+
+X\YZ  00     01     11     10
+0      1      0      0      0
+1      1      0      1      1
+
+Grupos:
+                1        3 
+par (M1,M3): (X+Y+Z').(X+Y'+Z') = (X+Z') + (Y.Y') = (X+Z') + (0) = X+Z' 
+ 
+                3         2
+par (M3,M2): (X+Y'+Z').(X+Y'+Z) = (X+Y') + (Z'.Z) = (X+Y') + (0) = X+Y'
+
+                1         5
+par (M1,M5): (X+Y+Z').(X'+Y+Z') = (Y+Z') + (X.X') = (Y+Z') + (0) = Y+Z'
+
+Expressão simplificada por MAXTERMOS: (X+Z').(X+Y').(Y+Z')
+
+F(X,Y,Z) = πM ( 1, 2, 3, 5 ) = (X+Y+Z').(X+Y'+Z).(X+Y'+Z').(X'+Y+Z') = (X+Z').(X+Y').(Y+Z')
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f2c (output S, 
+            input X, Y, Z);
+	assign S = (X|~Z) & (X|~Y) & (Y|~Z);
+endmodule
+
+d) F(X,Y,Z) = πM ( 0, 3, 4, 7 )
+
+X\YZ  00     01     11     10
+0      0      1      0      1
+1      0      1      0      1
+
+Grupos:
+                0        4 
+par (M0,M4): (X+Y+Z).(X'+Y+Z) = (Y+Z) + (X.X') = (Y+Z) + (0) = Y+Z 
+ 
+                3          7
+par (M3,M7): (X+Y'+Z').(X'+Y'+Z') = (Y'+Z') + (X.X') = (Y'+Z') + (0) = Y'+Z'
+
+Expressão simplificada por MAXTERMOS: (Y+Z).(Y'+Z')
+
+F(X,Y,Z) = πM ( 0, 3, 4, 7 ) = (X+Y+Z).(X+Y'+Z').(X'+Y+Z).(X'+Y'+Z') = (Y+Z).(Y'+Z')
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f2d (output S, 
+            input X, Y, Z);
+	assign S = (Y|Z) & (~Y|~Z);
+endmodule 
+
+e) F(X,Y,Z) = πM ( 1, 2, 6, 7 )
+
+X\YZ  00     01     11     10
+0      1      0      1      0
+1      1      1      0      0
+
+Grupos:
+                2        6 
+par (M2,M6): (X+Y'+Z).(X'+Y'+Z) = (Y'+Z) + (X.X') = (Y'+Z) + (0) = Y'+Z 
+ 
+                 7          6
+par (M7,M6): (X'+Y'+Z').(X'+Y'+Z) = (X'+Y') + (Z'.Z) = (X'+Y') + (0) = X'+Y'
+
+Expressão simplificada por MAXTERMOS: (Y'+Z).(X'+Y').(X+Y+Z')
+
+F(X,Y,Z) = πM ( 1, 2, 6, 7 ) = (X+Y+Z').(X+Y'+Z).(X'+Y'+Z).(X'+Y'+Z') = (Y'+Z).(X'+Y').(X+Y+Z')
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f2e (output S, 
+            input X, Y, Z);
+	assign S = (~Y|Z) & (~X|~Y) & (X|Y|~Z);
+endmodule
+
+################################################################################################
+
+03.) Construir os mapas de Veitch-Karnaugh e simplificar as funções lógicas abaixo
+e verificar pelas respectivas tabelas-verdades implementadas em Verilog e/ou Logisim:
+
+a) f(x,y,w,z) = ∑m ( 1, 2, 6, 7, 10, 11 )
+
+xy\wz   00      01      11      10     
+  00     0       1       0       1    
+  01     0       0       1       1
+  11     0       0       0       0
+  10     0       0       1       1
+
+Grupos:
+                2         6 
+par (m2,m6): x'y'wz' + x'ywz' = (x'wz') . (y'+y) = (x'wz') . (1) = x'wz' 
+ 
+               7      6 
+par (m7,m6): x'ywz + x'ywz' = (x'yw) . (z+z') = (x'yw) . (1) = x'yw 
+
+                11      10 
+par (m11,m10): xy'wz + xy'wz' = (xy'w) . (z+z') = (xy'w) . (1) = xy'w 
+
+Expressão simplificada por mintermos: x'wz' + x'yw + xy'w + x'y'w'z
+
+f(x,y,w,z) = ∑m ( 1, 2, 6, 7, 10, 11 ) = x'y'w'z + x'y'wz' + x'ywz' + x'ywz + xy'wz' + xy'wz = 
+= x'wz' + x'yw + xy'w + x'y'w'z
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f3a (output s, 
+            input x, y, w, z);
+	assign s = x&~w&~z | x&~y&w | x&y&~w | ~x&~y&~w&z;
+endmodule
+
+b) f (x,y,w,z) = ∑ m ( 0, 2, 3, 5, 8, 9, 13 )
+
+xy\wz   00      01      11      10     
+  00     1       0       1       1    
+  01     0       1       0       0
+  11     0       1       0       0
+  10     1       1       0       0
+
+Grupos:
+                0         2 
+par (m0,m2): x'y'w'z' + x'y'wz' = (x'y'z') . (w'+w) = (x'y'z') . (1) = x'y'z' 
+
+                3         2 
+par (m3,m2): x'y'wz + x'y'wz' = (x'y'w) . (z+z') = (x'y'w) . (1) = x'y'w
+ 
+               5      13 
+par (m5,m13): x'yw'z + xyw'z = (yw'z) . (x'+x) = (yw'z) . (1) = yw'z 
+
+                13      9 
+par (m13,m9): xyw'z + xy'w'z = (xw'z) . (y+y') = (xw'z) . (1) = xw'z
+
+                8      9 
+par (m8,m9): xy'w'z' + xy'w'z = (xy'w') . (z'+z) = (xy'w') . (1) = xy'w' 
+
+Expressão simplificada por mintermos: x'y'z' + x'y'w + yw'z + xw'z + xy'w'
+
+f (x,y,w,z) = ∑ m ( 0, 2, 3, 5, 8, 9, 13 ) = x'y'w'z' + x'y'wz' + x'y'wz' + x'yw' + xy'w'z' + xy'w'z + xyw'z = 
+= x'y'z' + x'y'w + yw'z + xw'z + xy'w'
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f3b (output s, 
+            input x, y, w, z);
+	assign s = ~x&~y&~z | ~x&~y&w | y&~w&z | x&~w&z | x&~y&~w;
+endmodule
+
+c) f (x,y,w,z) = ∑ m ( 0, 1, 2, 4, 7, 8, 11, 15 )
+
+xy\wz   00      01      11      10     
+  00     1       1       0       1    
+  01     1       0       1       0
+  11     0       0       1       0
+  10     1       0       1       0
+
+Grupos:
+                0         1 
+par (m0,m1): x'y'w'z' + x'y'w'z = (x'y'w') . (z'+z) = (x'y'w') . (1) = x'y'w'
+
+                0         2 
+par (m0,m2): x'y'w'z' + x'y'wz' = (x'y'z') . (w'+w) = (x'y'z') . (1) = x'y'z'
+
+                0         4 
+par (m0,m4): x'y'w'z' + x'yw'z' = (x'w'z') . (y'+y) = (x'w'z') . (1) = x'w'z'
+
+                7       15 
+par (m7,m15): x'ywz + xywz = ywz 
+
+                15      11 
+par (m15,m11): xywz + xy'wz = xwz
+
+                0        8 
+par (m0,m8): x'y'w'z' + xy'w'z' = y'w'z' 
+
+Expressão simplificada por mintermos: x'y'w' + x'y'z' + x'w'z' + ywz + xwz + y'w'z'
+
+f (x,y,w,z) = ∑ m ( 0, 1, 2, 4, 7, 8, 11, 15 ) = x'y'w'z' + x'y'w'z + x'y'wz' + x'yw'z' + x'ywz + xy'w'z' + xy'wz + xywz = 
+= x'y'w' + x'y'z' + x'w'z' + ywz + xwz + y'w'z'
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f3c (output s, 
+            input x, y, w, z);
+	assign s = ~x&~y&~w | ~x&~y&~z | ~x&~w&~z | y&w&z | x&w&z | ~y&~w&~z;
+endmodule
+
+d) f (x,y,w,z) = ∑ m ( 2, 4, 5, 7, 10, 12, 14 )
+
+xy\wz   00      01      11      10     
+  00     0       0       0       1    
+  01     1       1       1       0
+  11     1       0       0       1
+  10     0       0       0       1
+
+Grupos:
+                2         10 
+par (m2,m10): x'y'wz' + xy'wz' = y'wz' 
+
+                4         5 
+par (m4,m5): x'yw'z' + x'yw'z = x'yw'
+
+                5         7 
+par (m5,m7): x'yw'z + x'ywz = x'yz
+
+                4       12 
+par (m4,m12): x'yw'z' + xyw'z' = yw'z'
+
+                12      14 
+par (m12,m14): xyw'z' + xywz' = xyz'
+
+                14        10 
+par (m14,m10): xywz' + xy'wz' = xwz'
+
+Expressão simplificada por mintermos: y'wz' + x'yw' + x'yz + yw'z' + xyz' + xwz'
+
+f (x,y,w,z) = ∑ m ( 2, 4, 5, 7, 10, 12, 14 ) = x'y'wz' + x'yw'z' + x'yw'z + x'ywz + xy'wz' + xyw'z' + xywz' = 
+= y'wz' + x'yw' + x'yz + yw'z' + xyz' + xwz'
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f3d (output s, 
+            input x, y, w, z);
+	assign s = ~y&w&~z | ~x&y&~w | ~x&y&z | y&~w&~z | x&y&~z | x&w&~z;
+endmodule
+
+e) f (x,y,w,z) = ∑ m ( 0, 1, 2, 6, 8, 9, 12, 15 )
+
+xy\wz   00      01      11      10     
+  00     1       1       0       1    
+  01     0       0       0       1
+  11     1       0       1       0
+  10     1       1       0       0
+
+Grupos:
+                0         1 
+par (m0,m1): x'y'w'z' + x'y'w'z = x'y'w' 
+
+                0         2 
+par (m0,m2): x'y'w'z' + x'y'wz' = x'y'z'
+
+                0        8 
+par (m0,m8): x'y'w'z' + xy'w'z' = y'w'z'
+
+                2         6 
+par (m2,m6): x'y'wz' + x'ywz' = x'wz'
+
+               1        9
+par (m1,m9): x'y'w'z + xy'w'z = y'w'z
+
+                12       8 
+par (m12,m8): xyw'z' + xy'w'z' = xw'z'
+
+                8      9 
+par (m8,m9): xy'w'z' + xy'w'z = xy'w'
+
+Expressão simplificada por mintermos: x'y'w' + x'y'z' + y'w'z' + x'wz' + y'w'z + xw'z' + xy'w' + xywz
+
+f (x,y,w,z) = ∑ m ( 0, 1, 2, 6, 8, 9, 12, 15 ) = x'y'w'z'+ x'y'w'z + x'y'wz' + x'ywz' + xy'w'z' + xy'w'z + xyw'z' + xywz = 
+= x'y'w' + x'y'z' + y'w'z' + x'wz' + y'w'z + xw'z' + xy'w' + xywz
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f3e (output s, 
+            input x, y, w, z);
+	assign s = ~x&~y&~w | ~x&y&~z | ~y&~w&~z | ~x&w&~z | ~y&~w&z | x&~w&~z | x&~y&~w | x&y&w&z;
+endmodule
+
+################################################################################################
+
+04.) Construir os mapas de Veitch-Karnaugh e simplificar as funções lógicas abaixo por MAXTERMOS
+e verificar pelas respectivas tabelas-verdades implementadas em Verilog e/ou Logisim:
+
+a) F (X,Y,W,Z) = π M ( 2, 5, 7, 13 )
+
+XY\WZ   00      01      11      10     
+  00     1       1       1       0    
+  01     1       0       0       1
+  11     1       0       1       1
+  10     1       1       1       1
+
+Grupos:
+                    5           13 
+par (M5, M13): (X+Y'+W+Z').(X'+Y'+W+Z')= Y'+W+Z'
+
+                    5            7 
+par (M5, M13): (X+Y'+W+Z').(X+Y'+W'+Z')= X+Y'+Z'
+
+Expressão simplificada por MAXTERMOS: (Y'+W+Z').(X+Y'+Z').(X+Y+W'+Z)
+
+
+F (X,Y,W,Z) = π M ( 2, 5, 7, 13 ) = (X+Y+W'+Z).(X+Y'+W+Z').(X+Y'+W'+Z').(X'+Y'+W+Z') = (Y'+W+Z').(X+Y'+Z').(X+Y+W'+Z)
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f4a (output S, 
+            input X, Y, W, Z);
+	assign S = (~Y|W|~Z) & (X|~Y|~Z) & (X|Y|~W|Z);
+endmodule
+
+b) F (X,Y,W,Z) = π M ( 4, 8, 9, 10, 12 )
+
+XY\WZ   00      01      11      10     
+  00     1       1       1       1    
+  01     0       1       1       1
+  11     0       1       1       1
+  10     0       0       1       0
+
+Grupos:
+                    4           12 
+par (M4, M12): (X+Y'+W+Z).(X'+Y'+W+Z)= Y'+W+Z
+
+                    12           8 
+par (M12, M8): (X'+Y'+W+Z).(X'+Y+W+Z)= X'+W+Z
+
+                     8          10 
+par (M8, M10): (X'+Y+W+Z).(X'+Y+W'+Z)= X'+Y+Z
+
+                     8          9 
+par (M8, M10): (X'+Y+W+Z).(X'+Y+W+Z')= X'+Y+W
+
+Expressão simplificada por MAXTERMOS: (Y'+W+Z).(X'+W+Z).(X'+Y+Z).(X'+Y+W)
+
+
+F (X,Y,W,Z) = π M ( 4, 8, 9, 10, 12 ) = (X+Y'+W+Z).(X'+Y+W+Z).(X'+Y+W+Z').(X'+Y+W'+Z).(X'+Y'+W+Z) = (Y'+W+Z).(X'+W+Z).(X'+Y+Z).(X'+Y+W)
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f4b (output S, 
+            input X, Y, W, Z);
+	assign S = (~Y|W|Z) & (~X|W|Z) & (~X|Y|Z) & (~X|Y|W);
+endmodule
+
+c) F (X,Y,W,Z) = π M ( 4, 8, 12, 13, 15 )
+
+XY\WZ   00      01      11      10     
+  00     1       1       1       1    
+  01     0       1       1       1
+  11     0       0       0       1
+  10     0       1       1       1 
+
+Grupos:
+                    4           12 
+par (M4, M12): (X+Y'+W+Z).(X'+Y'+W+Z)= Y'+W+Z
+
+                    12           8 
+par (M12, M8): (X'+Y'+W+Z).(X'+Y+W+Z)= X'+W+Z
+
+                    12           13 
+par (M12, M13): (X'+Y'+W+Z).(X'+Y'+W+Z')= X'+Y'+W
+
+                    13           15 
+par (M13, M15): (X'+Y'+W+Z').(X'+Y'+W'+Z')= X'+Y'+Z'
+
+Expressão simplificada por MAXTERMOS: (Y'+W+Z).(X'+W+Z).(X'+Y'+W).(X'+Y'+Z')
+
+
+F (X,Y,W,Z) = π M ( 4, 8, 12, 13, 15 ) = (X+Y'+W+Z).(X'+Y+W+Z).(X'+Y'+W+Z).(X'+Y'+W+Z').(X'+Y'+W'+Z') = (Y'+W+Z).(X'+W+Z).(X'+Y'+W).(X'+Y'+Z')
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f4c (output S, 
+            input X, Y, W, Z);
+	assign S = (~Y|W|Z) & (~X|W|Z) & (~X|~Y|W) & (~X|~Y|~Z);
+endmodule
+
+d) F (X,Y,W,Z) = π M ( 1, 2, 5, 7, 13, 15 ) 
+
+XY\WZ   00      01      11      10     
+  00     1       0       1       0    
+  01     1       0       0       1
+  11     1       0       0       1
+  10     1       1       1       1 
+
+Grupos:
+                    1           5 
+par (M1, M5): (X+Y+W+Z').(X+Y'+W+Z')= X+W+Z'
+
+                    5           13 
+par (M5, M13): (X+Y'+W+Z').(X'+Y'+W+Z')= Y'+W+Z'
+
+                    5            7 
+par (M5, M13): (X+Y'+W+Z').(X+Y'+W'+Z')= X+Y'+Z'
+
+                    7           15 
+par (M7, M15): (X+Y'+W'+Z').(X'+Y'+W'+Z')= Y'+W'+Z'
+
+                    13           15 
+par (M13, M15): (X'+Y'+W+Z').(X'+Y'+W'+Z')= X'+Y'+Z'
+
+Expressão simplificada por MAXTERMOS: (X+W+Z').(Y'+W+Z').(X+Y'+Z').(Y'+W'+Z').(X'+Y'+Z')
+
+F (X,Y,W,Z) = π M ( 1, 2, 5, 7, 13, 15 ) = (X+Y+W+Z').(X+Y+W'+Z).(X+Y'+W+Z').(X+Y'+W'+Z').(X'+Y'+W+Z').(X'+Y'+W'+Z') = 
+= (X+W+Z').(Y'+W+Z').(X+Y'+Z').(Y'+W'+Z').(X'+Y'+Z').(X+Y+W'+Z)
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f4d (output S, 
+            input X, Y, W, Z);
+	assign S = (X|W|~Z) & (~Y|W|~Z) & (X|~Y|~Z) & (~Y|~W|~Z) & (~X|~Y|~Z) & (X|Y|~W|Z);
+endmodule
+
+e) F (X,Y,W,Z) = π M ( 4, 5, 6, 7, 14, 15 )
+
+XY\WZ   00      01      11      10     
+  00     1       1       1       1    
+  01     0       0       0       0
+  11     1       1       0       0
+  10     1       1       1       1 
+
+Grupos:
+			      4          5           7            6         
+quadra (M4, M5, M7, M6): (X+Y'+W+Z).(X+Y'+W+Z').(X+Y'+W'+Z').(X+Y'+W'+Z)= X+Y'
+
+			        7            6           15            14 
+quadra (M7, M6, M15, M14): (X+Y'+W'+Z').(X+Y'+W'+Z).(X'+Y'+W'+Z').(X'+Y'+W'+Z)= Y'+W'
+
+
+Expressão simplificada por MAXTERMOS: (X+Y').(Y'+W')
+
+F (X,Y,W,Z) = π M ( 4, 5, 6, 7, 14, 15 ) = (X+Y'+W+Z).(X+Y'+W+Z').(X+Y'+W'+Z).(X+Y'+W'+Z').(X'+Y'+W'+Z).(X'+Y'+W'+Z') = 
+= (X+Y').(Y'+W')
+
+Implementação em Verilog com módulos definidos por expressão:
+
+module f4e (output S, 
+            input X, Y, W, Z);
+	assign S = (X|~Y) & (~Y|~W);
+endmodule
+
+################################################################################################
+
+05.) Identificar a equação característica do circuito lógicos abaixo e
+simplifica-la pelo mapa de Veitch-Karnaugh usando mintermos.
+
+#mintermo | mintermo | x | y | z | s
+0	  | x'.y'.z' | 0 | 0 | 0 | 0
+1	  | x'.y'.z  | 0 | 0 | 1 | 0
+2	  | x'.y.z'  | 0 | 1 | 0 | 0
+3	  | x'.y.z   | 0 | 1 | 1 | 0
+4	  | x.y'.z'  | 1 | 0 | 0 | 1
+5	  | x.y'.z   | 1 | 0 | 1 | 1 
+6	  | x.y.z'   | 1 | 1 | 0 | 1
+7	  | x.y.z    | 1 | 1 | 1 | 0
+
+f(x,y,z) = ∑m ( 4, 5, 6 )
+
+x\yz  00     01     11     10
+0      0      0      0      0
+1      1      1      0      1
+
+Grupos:
+               4         5 
+par (m4,m5): xy'z' + xy'z = xy' 
+
+              4       6
+par (m4,m6): xy'z' + xyz' = xz'
+
+Expressão simplificada por mintermos: xy' + xz'
+
+f(x,y,z) = ∑m ( 4, 5, 6 ) = xy'z' + xy'z + xyz' = xy' + xz'
+
+################################################################################################
+
+06.) Identificar as equações características dos circuitos lógicos abaixo e
+simplifica-las pelo mapa de Veitch-Karnaugh usando MAXTERMOS.
+
+#MAXTERMO |   MAXTERMO  | x | y | w | z |  s
+0	  |   X+Y+W+Z 	| 0 | 0 | 0 | 0 |  0
+1	  |   X+Y+W+Z'  | 0 | 0 | 0 | 1 |  0	
+2	  |   X+Y+W'+Z  | 0 | 0 | 1 | 0 |  0
+3	  |   X+Y+W'+Z' | 0 | 0 | 1 | 1 |  0
+4	  |   X+Y'+W+Z  | 0 | 1 | 0 | 0 |  0
+5	  |   X+Y'+W+Z' | 0 | 1 | 0 | 1 |  0 
+6	  |   X+Y'+W'+Z | 0 | 1 | 1 | 0 |  0
+7	  |   X+Y'+W'+Z'| 0 | 1 | 1 | 1 |  0
+8	  |   X'+Y+W+Z 	| 1 | 0 | 0 | 0 |  1
+9	  |   X'+Y+W+Z' | 1 | 0 | 0 | 1 |  1
+10	  |   X'+Y+W'+Z | 1 | 0 | 1 | 0 |  1
+11	  |   X'+Y+W'+Z'| 1 | 0 | 1 | 1 |  1
+12	  |   X'+Y'+W+Z | 1 | 1 | 0 | 0 |  1
+13	  |   X'+Y'+W+Z'| 1 | 1 | 0 | 1 |  1 
+14	  |   X'+Y'+W'+Z| 1 | 1 | 1 | 0 |  1
+15	  |  X'+Y'+W'+Z'| 1 | 1 | 1 | 1 |  0
+
+F (X,Y,W,Z) = π M ( 0, 1, 2, 3, 4, 5, 6, 7, 15 )
+
+XY\WZ   00      01      11      10     
+  00     0       0       0       0    
+  01     0       0       0       0
+  11     1       1       0       1
+  10     1       1       1       1 
+
+Grupos:
+		               
+grupo 8 (M0, M1, M2, M3, M4, M5, M6, M7): 
+(X+Y+W+Z).(X+Y+W+Z').(X+Y+W'+Z).(X+Y+W'+Z').(X+Y'+W+Z).(X+Y'+W+Z').(X+Y'+W'+Z).(X+Y'+W'+Z') = X
+
+		    7          15          
+par (M7, M15): (X+Y'+W'+Z').(X'+Y'+W'+Z')= Y'+W'+Z'
+
+
+Expressão simplificada por MAXTERMOS: X.(Y'+W'+Z')
+
+F (X,Y,W,Z) = π M ( 0, 1, 2, 3, 4, 5, 6, 7, 15 ) = (X+Y+W+Z).(X+Y+W+Z').(X+Y+W'+Z).(X+Y+W'+Z').(X+Y'+W+Z).(X+Y'+W+Z').(X+Y'+W'+Z).(X+Y'+W'+Z').(X'+Y'+W'+Z') = 
+= X.(Y'+W'+Z')
+
+
+
+
+
+
+

@@ -1,0 +1,109 @@
+/* 
+
+matricula: 747451 - aluno: Lucas Maia Rocha
+
+*/
+/*
+04- fazer as operacoes indicadas mediante ao uso de complemento de dois.)
+
+a- 11100(2) - 1101(2) = X(2)
+
+    11100
+   -01101 
+    -----
+  X=01111(2) 
+
+b- 101,1001(2) - 10,01(2) = X(2)
+
+    101,1001
+   -010,0100
+    --------
+  X=011,0000(2) 
+
+c- 213(4) - 123(4) = X(4)
+
+    213(4) = 100111(2)
+    123(4) = 11011(2)
+
+    100111//39
+   -011011//27
+    ------
+  X=001100(2)
+  X=30(4)
+
+d- 312(8) - 123(8) = X(8)
+
+    312(8) = 11001010(2)
+    123(8) = 101011(2)
+
+    11001010
+   -00101011
+    --------
+  X=167(8)    
+
+e- 9D1(16) - A1B(16) = X(16)
+
+    9D1(16) = 100111010001(2)
+    A1B(16) = 101000011011(2)
+
+    101000011011
+   -100111010001
+    ------------
+  X=000001001010(2)
+  X=4A(16)
+
+*/
+
+/*
+Guia_0304
+*/
+module Guia_0304;
+
+// define data
+reg signed [7:0] a = 8'b1111_1010; // binary
+reg signed [6:0] b = 8'b1111_101 ; // binary
+reg signed [5:0] c = 8'b0001_10 ; // binary
+reg signed [7:0] d = 0; // binary
+reg signed [6:0] e = 0; // binary
+reg signed [5:0] f = 0; // binary
+
+// actions
+initial
+
+begin : main
+
+$display ( "Guia_0304 - Tests" );
+
+//A
+a = 8'b11100;
+b = 8'b1101;
+d = a-b;
+$display ( "a = a-b = %b-%b = %b = %b", a, b, d, d );
+
+//B
+a = 8'b101_1001;
+b = 8'b10_01;
+d = a-b;
+$display ( "b = a-b = %b-%b = %b = %b", a, b, d, d );
+
+//C
+a = 8'b100111;
+b = 8'b11011;
+d = a-b;
+$display ( "c = a-b = %b-%b = %b = 30", a, b, d );
+
+//D
+a = 8'o312;
+b = 8'o123;
+d = a-b;
+$display ( "d = a-b = %b-%b = %b = %o", a, b, d, d );
+
+//E
+a = 16'h9d1;
+b = 16'ha1b;
+d = a-b;
+$display ( "e = a-b = %b-%b = %b = %x", a, b, d, d );
+
+end
+
+endmodule

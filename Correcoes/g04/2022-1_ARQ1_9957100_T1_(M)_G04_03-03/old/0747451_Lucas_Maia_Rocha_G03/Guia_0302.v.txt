@@ -1,0 +1,106 @@
+/* 
+
+matricula: 747451 - aluno: Lucas Maia Rocha
+
+*/
+/*
+
+02 - determinar os complementos para os valores e as quantidades indicadas.) 
+
+a- C1,6 (213(4)) = X(2)
+
+    213(4) = X(2)
+    X(2) = 100111
+
+    C1 (+6) = (100111(2)) = 011000
+    
+b- C1,8 (6D(16)) = X(2)
+
+    6D(16) = X(2)
+    X(2) = 1101101
+
+    C1 (+8) = (01101101(2)) = 10010010
+
+c- C2,6 (321(4)) = X(2)
+
+    321(4) = X(2)
+    X(2) = 111001
+
+    C1 (+6) = (111001(2)) = 000110
+    C2 = 000110
+         +    1
+         ------
+    X  =    111  
+
+d- C2,7 (175(8)) = X(2)
+
+    175(8) = X(2)
+    X(2) = 1111101
+
+    C1 (+7) = (1111101(2)) = 0000010
+    C2 = 0000010
+         +     1
+         -------
+    X  =      11
+
+e- C2,8 (F4(16)) = X(2)
+
+    F4(16) = X(2)
+    X(2) = 11110100
+
+    C1 (+8) = (11110100(2)) = 00001011
+    C2 = 00001011
+         +      1
+         --------
+    X  =     1100    
+
+
+*/
+
+/*
+Guia_0302
+*/
+module Guia_0302;
+
+// define data
+reg [7:0] a = 8'h0a ; // hexadecimal
+reg [6:0] b = 8'o15 ; // octal
+reg [5:0] c = 13; // decimal
+reg [7:0] d = 0; // binary
+reg [6:0] e = 0; // binary
+reg [5:0] f = 0; // binary
+
+// actions
+initial
+
+begin : main
+$display ( "Guia_0302 - Tests" );
+
+//A
+c = 39;
+f = ~c+1;
+$display ( "a = %6b -> C1(c) = %6b -> C2(c) = %6b", c, ~c, f );
+
+//B
+a = 8'h6d;
+d = ~a+1;
+$display ( "b = %8b -> C1(a) = %8b -> C2(a) = %8b", a, ~a, d );
+
+//C
+c = 57;
+f = ~c+1;
+$display ( "c = %6b -> C1(c) = %6b -> C2(c) = %6b", c, ~c, f );
+
+//D
+b = 8'o175;
+e = ~b+1;
+$display ( "d = %7b -> C1(b) = %7b -> C2(b) = %7b", b, ~b, e );
+
+//E
+a = 8'hf4;
+d = ~a+1;
+$display ( "e = %8b -> C1(a) = %8b -> C2(a) = %8b", a, ~a, d );
+
+end
+
+endmodule 

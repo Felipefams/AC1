@@ -1,0 +1,62 @@
+// ---------------------
+// TRUTH TABLE
+// Nome: Frederico Malaquias Caldeira
+// Matricula: 747544
+// ---------------------
+
+05.) Identificar as expressões SoP e PoS equivalentes às tabelas abaixo
+e verificar pelas respectivas tabelas-verdades implementadas em Verilog ou pelo Logisim:
+a.)
+n x y f(x,y)
+0 0 0 1 SoP( ) =  1
+1 0 1 0
+2 1 0 1 PoS( ) = 0
+3 1 1 1
+
+b.)
+n x y f(x,y)
+0 0 0 0 SoP( ) = 0
+1 0 1 1
+2 1 0 0 PoS( ) = 0
+3 1 1 1
+
+c.)
+n x y z f(x,y,z)
+0 0 0 0 1 SoP( ) = 1
+1 0 0 1 0
+2 0 1 0 1
+3 0 1 1 0
+4 1 0 0 1 PoS( ) = 1
+5 1 0 1 0
+6 1 1 0 1
+7 1 1 1 1
+
+d.)
+n x y z f(x,y,z)
+0 0 0 0 1 SoP( ) = 1
+1 0 0 1 1
+2 0 1 0 1
+3 0 1 1 1
+4 1 0 0 0 PoS( ) = 0
+5 1 0 1 0
+6 1 1 0 1
+7 1 1 1 1
+
+e.)
+n x y w z f(x,y,w,z)
+0 0 0 0 0 1 SoP( ) = 0
+1 0 0 0 1 1
+2 0 0 1 0 0
+3 0 0 1 1 1
+4 0 1 0 0 0
+5 0 1 0 1 1
+6 0 1 1 0 0
+7 0 1 1 1 1
+8 1 0 0 0 1 PoS( ) = 1
+9 1 0 0 1 0
+10 1 0 1 0 1
+11 1 0 1 1 0
+12 1 1 0 0 0
+13 1 1 0 1 1
+14 1 1 1 0 1
+15 1 1 1 1 

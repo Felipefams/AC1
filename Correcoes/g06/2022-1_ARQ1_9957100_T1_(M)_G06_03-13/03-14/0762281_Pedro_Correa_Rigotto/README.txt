@@ -1,0 +1,1 @@
+Tem como fazer portão lógico com mais de uma entrada no verilog?

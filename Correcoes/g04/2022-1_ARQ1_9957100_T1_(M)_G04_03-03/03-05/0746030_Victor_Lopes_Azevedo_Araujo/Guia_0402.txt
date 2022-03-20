@@ -1,0 +1,26 @@
+Aluno: Victor Lopes Azevedo Araujo
+N⁰ de Matricula: 746030
+
+02.) Simplificar as expressões abaixo pelas propriedades da álgebra de Boole
+e verificar pelas respectivas tabelas-verdades implementadas em Verilog ou pelo Logisim:
+
+a.) x . ( x' + y' )' 
+    x . (x + y)       //De Morgan
+   (x . x) + (x . y)  //Distributiva
+        
+
+b.) ( x' + y' ) + ( x' . y ) 
+    (x + y)' + (x' . y)      //De Morgan
+
+
+c.) ( x' . y' )' . ( x' + y' ) 
+    (x . y) . (x' + y') //De Morgan
+    (x . y) . (x + y)'  
+
+    
+d.) ( x . y' )' . z 
+    (x' . y) + (x' + y) //De Morgan
+
+
+e.) ( x + y ) . ( y + z') 
+    (y + x') . (y' + x)' //De Morgan

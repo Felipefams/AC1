@@ -1,0 +1,73 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002911d8a6a90 .scope module, "test_f5" "test_f5" 2 33;
+ .timescale 0 0;
+v000002911d85aea0_0 .net "s1", 0 0, L_000002911d859020;  1 drivers
+v000002911d85af40_0 .net "s2", 0 0, L_000002911d858340;  1 drivers
+v000002911d858ce0_0 .var "x", 0 0;
+v000002911d858d80_0 .var "y", 0 0;
+S_000002911d8a6c20 .scope begin, "main" "main" 2 43, 2 43 0, S_000002911d8a6a90;
+ .timescale 0 0;
+S_000002911d8a6db0 .scope module, "moduloA" "f5a" 2 39, 2 16 0, S_000002911d8a6a90;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_000002911d859020 .functor OR 1, v000002911d858ce0_0, v000002911d858d80_0, C4<0>, C4<0>;
+v000002911d873390_0 .net "a", 0 0, v000002911d858ce0_0;  1 drivers
+v000002911d873170_0 .net "b", 0 0, v000002911d858d80_0;  1 drivers
+v000002911d8a50e0_0 .net "s", 0 0, L_000002911d859020;  alias, 1 drivers
+S_000002911d872ae0 .scope module, "moduloB" "f5b" 2 40, 2 25 0, S_000002911d8a6a90;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_000002911d858340 .functor OR 1, v000002911d858ce0_0, v000002911d858d80_0, C4<0>, C4<0>;
+v000002911d8a6090_0 .net "a", 0 0, v000002911d858ce0_0;  alias, 1 drivers
+v000002911d858f80_0 .net "b", 0 0, v000002911d858d80_0;  alias, 1 drivers
+v000002911d8582a0_0 .net "s", 0 0, L_000002911d858340;  alias, 1 drivers
+    .scope S_000002911d8a6a90;
+T_0 ;
+    %fork t_1, S_000002911d8a6c20;
+    %jmp t_0;
+    .scope S_000002911d8a6c20;
+t_1 ;
+    %vpi_call 2 44 "$display", "------- Exemplo_0507 -------\012" {0 0 0};
+    %vpi_call 2 45 "$display", "a | b = s\012" {0 0 0};
+    %vpi_call 2 47 "$monitor", "%b %b %6b", v000002911d858ce0_0, v000002911d858d80_0, v000002911d85af40_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002911d858ce0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002911d858d80_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002911d858ce0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002911d858d80_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002911d858ce0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002911d858d80_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002911d858ce0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002911d858d80_0, 0, 1;
+    %end;
+    .scope S_000002911d8a6a90;
+t_0 %join;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Exemplo_0507.v";

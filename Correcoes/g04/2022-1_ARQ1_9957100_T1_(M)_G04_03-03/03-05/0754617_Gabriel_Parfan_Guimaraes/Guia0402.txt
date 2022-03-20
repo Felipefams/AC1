@@ -1,0 +1,30 @@
+a) X ^ Y
+  X ^ ~(~X v ~Y)
+= X ^ (~(~X) ^ ~(~Y))
+= X ^ X ^ Y
+= X ^ Y
+
+b) ~X v ~Y
+  (~X v ~Y) v (~X ^ Y)
+= (~X v (~X ^ Y) v ~Y)
+= ~X v ~Y
+
+c) (X ^ ~Y) v (Y ^ ~X)
+  ~(~X ^ ~Y) ^ (~X v ~Y)
+= (~(~X) v ~(~Y)) ^ (~X v ~Y)
+= (X v Y) ^ (~X v ~Y)
+= (X ^ ~X) v (X ^ ~Y) v (Y ^ ~X) v (Y ^ ~Y)
+= (X ^ ~Y) v (Y ^ ~X)
+
+d) ~X v Y
+  ~(X ^ ~Y) v ~(X v ~Y)
+= (~X v ~(~Y)) v ~(X v ~(~Y))
+= ~X v Y v ~X ^ ~(~Y)
+= ~X v Y v ~X ^ Y
+= ~X v (~X ^ Y) v Y
+= ~X v Y
+
+e) 0
+  ~(~Y v X) ^ (~Y v X)
+= (~Y v X) ^ ~(~Y v X)
+= 0

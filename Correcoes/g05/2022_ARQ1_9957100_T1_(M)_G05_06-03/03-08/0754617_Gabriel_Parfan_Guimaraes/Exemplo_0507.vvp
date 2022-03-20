@@ -1,0 +1,73 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\ICARUS~1\lib\ivl\system.vpi";
+:vpi_module "C:\ICARUS~1\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\ICARUS~1\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\ICARUS~1\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\ICARUS~1\lib\ivl\va_math.vpi";
+S_0000028b1cf68450 .scope module, "Exemplo_0507" "Exemplo_0507" 2 5;
+ .timescale 0 0;
+v0000028b1cf6a970_0 .var "a", 0 0;
+v0000028b1cf6aa10_0 .var "b", 0 0;
+v0000028b1ceefe10_0 .net "s", 0 0, L_0000028b1cf6ac00;  1 drivers
+S_0000028b1cf68960 .scope begin, "main" "main" 2 11, 2 11 0, S_0000028b1cf68450;
+ .timescale 0 0;
+S_0000028b1cea5e10 .scope module, "myModule" "exclusive_disjunction" 2 8, 2 1 0, S_0000028b1cf68450;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_0000028b1ce72970 .functor NOT 1, v0000028b1cf6aa10_0, C4<0>, C4<0>, C4<0>;
+L_0000028b1ce72ba0 .functor OR 1, v0000028b1cf6a970_0, L_0000028b1ce72970, C4<0>, C4<0>;
+L_0000028b1cf6aab0 .functor NOT 1, v0000028b1cf6a970_0, C4<0>, C4<0>, C4<0>;
+L_0000028b1cf6ab20 .functor OR 1, L_0000028b1cf6aab0, v0000028b1cf6aa10_0, C4<0>, C4<0>;
+L_0000028b1cf6ab90 .functor AND 1, L_0000028b1ce72ba0, L_0000028b1cf6ab20, C4<1>, C4<1>;
+L_0000028b1cf6ac00 .functor NOT 1, L_0000028b1cf6ab90, C4<0>, C4<0>, C4<0>;
+v0000028b1ce72dc0_0 .net *"_ivl_0", 0 0, L_0000028b1ce72970;  1 drivers
+v0000028b1ce72fe0_0 .net *"_ivl_2", 0 0, L_0000028b1ce72ba0;  1 drivers
+v0000028b1ce728d0_0 .net *"_ivl_4", 0 0, L_0000028b1cf6aab0;  1 drivers
+v0000028b1cea5fa0_0 .net *"_ivl_6", 0 0, L_0000028b1cf6ab20;  1 drivers
+v0000028b1cea6040_0 .net *"_ivl_8", 0 0, L_0000028b1cf6ab90;  1 drivers
+v0000028b1cea60e0_0 .net "a", 0 0, v0000028b1cf6a970_0;  1 drivers
+v0000028b1cea6180_0 .net "b", 0 0, v0000028b1cf6aa10_0;  1 drivers
+v0000028b1cea6220_0 .net "s", 0 0, L_0000028b1cf6ac00;  alias, 1 drivers
+    .scope S_0000028b1cf68450;
+T_0 ;
+    %fork t_1, S_0000028b1cf68960;
+    %jmp t_0;
+    .scope S_0000028b1cf68960;
+t_1 ;
+    %vpi_call 2 12 "$display", "Exemplo_0507 - GABRIEL PARFAN GUIMARAES - 754617" {0 0 0};
+    %vpi_call 2 13 "$display", "   a    b    s" {0 0 0};
+    %vpi_call 2 15 "$monitor", "%4b %4b %4b", v0000028b1cf6a970_0, v0000028b1cf6aa10_0, v0000028b1ceefe10_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000028b1cf6a970_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000028b1cf6aa10_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000028b1cf6a970_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000028b1cf6aa10_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000028b1cf6a970_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000028b1cf6aa10_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000028b1cf6a970_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000028b1cf6aa10_0, 0, 1;
+    %end;
+    .scope S_0000028b1cf68450;
+t_0 %join;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Exemplo_0507.v";

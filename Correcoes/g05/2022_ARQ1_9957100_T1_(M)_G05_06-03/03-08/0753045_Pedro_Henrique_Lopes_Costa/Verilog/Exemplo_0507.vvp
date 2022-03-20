@@ -1,0 +1,76 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55ea1f8cd010 .scope module, "test_f5" "test_f5" 2 40;
+ .timescale 0 0;
+RS_0x7f90c0f000d8 .resolv tri, L_0x55ea1f8e0c50, L_0x55ea1f8e0cc0;
+v0x55ea1f8e0880_0 .net8 "s", 0 0, RS_0x7f90c0f000d8;  2 drivers
+v0x55ea1f8e0970_0 .var "x", 0 0;
+v0x55ea1f8e0a80_0 .var "y", 0 0;
+S_0x55ea1f8cd190 .scope begin, "main" "main" 2 50, 2 50 0, S_0x55ea1f8cd010;
+ .timescale 0 0;
+S_0x55ea1f8cdcb0 .scope module, "moduloA" "f5a" 2 47, 2 21 0, S_0x55ea1f8cd010;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s"
+    .port_info 1 /INPUT 1 "a"
+    .port_info 2 /INPUT 1 "b"
+L_0x55ea1f8e0b70 .functor NOT 1, v0x55ea1f8e0970_0, C4<0>, C4<0>, C4<0>;
+L_0x55ea1f8e0be0 .functor NOT 1, v0x55ea1f8e0a80_0, C4<0>, C4<0>, C4<0>;
+L_0x55ea1f8e0c50 .functor XOR 1, v0x55ea1f8e0970_0, v0x55ea1f8e0a80_0, C4<0>, C4<0>;
+v0x55ea1f8cded0_0 .net "a", 0 0, v0x55ea1f8e0970_0;  1 drivers
+v0x55ea1f8e0010_0 .net "b", 0 0, v0x55ea1f8e0a80_0;  1 drivers
+v0x55ea1f8e00d0_0 .net "not_a", 0 0, L_0x55ea1f8e0b70;  1 drivers
+v0x55ea1f8e0170_0 .net "not_b", 0 0, L_0x55ea1f8e0be0;  1 drivers
+v0x55ea1f8e0230_0 .net8 "s", 0 0, RS_0x7f90c0f000d8;  alias, 2 drivers
+S_0x55ea1f8e03c0 .scope module, "moduloB" "f5b" 2 48, 2 36 0, S_0x55ea1f8cd010;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s"
+    .port_info 1 /INPUT 1 "a"
+    .port_info 2 /INPUT 1 "b"
+L_0x55ea1f8e0cc0 .functor XOR 1, v0x55ea1f8e0970_0, v0x55ea1f8e0a80_0, C4<0>, C4<0>;
+v0x55ea1f8e05e0_0 .net "a", 0 0, v0x55ea1f8e0970_0;  alias, 1 drivers
+v0x55ea1f8e06b0_0 .net "b", 0 0, v0x55ea1f8e0a80_0;  alias, 1 drivers
+v0x55ea1f8e0780_0 .net8 "s", 0 0, RS_0x7f90c0f000d8;  alias, 2 drivers
+    .scope S_0x55ea1f8cd010;
+T_0 ;
+    %fork t_1, S_0x55ea1f8cd190;
+    %jmp t_0;
+    .scope S_0x55ea1f8cd190;
+t_1 ;
+    %vpi_call 2 51 "$display", "________ Guia_0506 ________\012" {0 0 0};
+    %vpi_call 2 52 "$display", "a ^ b = s\012\012a  b  s" {0 0 0};
+    %vpi_call 2 53 "$monitor", "%b  %b  %b ", v0x55ea1f8e0970_0, v0x55ea1f8e0a80_0, v0x55ea1f8e0880_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ea1f8e0970_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ea1f8e0a80_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ea1f8e0970_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ea1f8e0a80_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ea1f8e0970_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ea1f8e0a80_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ea1f8e0970_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ea1f8e0a80_0, 0, 1;
+    %end;
+    .scope S_0x55ea1f8cd010;
+t_0 %join;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Exemplo_0507.v";
