@@ -1,5 +1,5 @@
 // -------------------------
-// Exemplo_0701 - GATES
+// Exemplo_0702 - GATES
 // Nome: Felipe Augusto Morais Silva 
 // Matricula: 748473 
 // -------------------------
@@ -15,8 +15,8 @@
 // multiplexers and demultiplexers often work together.
 //
 module f7 ( output s1, output s2, input a, input b );
-and AND1 (s1, a, b);
-nand NAND1 (s2, a, b);
+or OR1 (s1, a, b);
+nor NOR1 (s2, a, b);
 endmodule // f7
 // -------------------------
 // multiplexer
@@ -45,7 +45,7 @@ mux MUX1 ( mux_out, s1, s2, s );
 // ------------------------- parte principal
 initial
 begin : main
-$display("Exemplo_0701 - Felipe Augusto Morais Silva - 748473");
+$display("Exemplo_0702 - Felipe Augusto Morais Silva - 748473");
 $display("Test LU's module");
 $display("   x    y    s    s1   s2   ans");
 //must define the variables before the first print, otherwise the answer will
@@ -60,6 +60,7 @@ x = 1'b0; y = 1'b0; s = 1'b0;
 #1   x = 1'b1;  y =  1'b0;
 #1   x = 1'b1;  y =  1'b1;
 //when s = 1
+//it will print X = 1, Y = 1; 2 times, idk why tho.
 #1 	 s = 1'b1;
 #1   x = 1'b0;  y =  1'b0;
 #1   x = 1'b0;  y =  1'b1;
