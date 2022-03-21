@@ -47,7 +47,7 @@ mux MUX1 ( mux_out, s1, s2, s3, s4, s );
 // ------------------------- parte principal
 initial
 begin : main
-$display("Exemplo_0702 - Felipe Augusto Morais Silva - 748473");
+$display("Exemplo_0704 - Felipe Augusto Morais Silva - 748473");
 $display("Test LU's module");
 $display("   x    y    s    s1   s2   s3   s4  ans");
 //must define the variables before the first print, otherwise the answer will

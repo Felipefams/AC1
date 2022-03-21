@@ -22,7 +22,6 @@ wire a;
 f5a modulo ( a, x, y, z);
 initial
 begin : main
-$display("Exemplo_0605 -Felipe Augusto Morais Silva - 748473");
 $display("Test module");
 $display("   x    y    z =   r1   r2");
 $monitor("%4b %4b %4b = %4b ", x, y, z, a);
@@ -74,8 +73,9 @@ endmodule // test_f5
 			String s = reg + (char)(c-n) + ";\n"; 
 			return makeReg(s, n - 1);
 		}
-		return module;
+		return reg;
 	}
+
 
    public static void main(String[] args){
 	   //reading the logical expression
@@ -88,8 +88,9 @@ endmodule // test_f5
 	   //module name
 	   String module = "module f ( output s ";
 	   String module_done = module + makeModule(module, variables) + ");";
-	   //System.out.println(makeModule(module, variables));
-	   System.out.println(module_done);
+	   String reg = "reg ";
+	   String reg_done = reg + makeReg(reg, variables); 
+	   System.out.println(reg_done);
    }
 
    //class for I/O reading
