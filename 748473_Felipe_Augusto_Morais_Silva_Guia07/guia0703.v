@@ -1,7 +1,7 @@
 // -------------------------
 // Exemplo_0703 - GATES
-// Nome: Felipe Augusto Morais Silva 
-// Matricula: 748473 
+// Nome: Felipe Augusto Morais Silva
+// Matricula: 748473
 // -------------------------
 // -------------------------
 // f7a_gate
@@ -33,7 +33,7 @@ and AND2 ( sb, b, select );
 or OR1 ( s , sa, sb );
 endmodule // mux
 // -------------------------
-// multiplexer 2 
+// multiplexer 2
 // -------------------------
 module mux2 ( output s, input a, input b, input select );
 // definir dados locais
@@ -47,7 +47,7 @@ and AND2 ( sb, b, select );
 or OR1 ( s , sa, sb );
 endmodule // mux
 // -------------------------
-// multiplexer 3 
+// multiplexer 3
 // -------------------------
 module mux3 ( output s, input a, input b, input select );
 // definir dados locais
@@ -85,10 +85,10 @@ $display("Exemplo_0703 - Felipe Augusto Morais Silva - 748473");
 $display("Test LU's module");
 $display("   x    y    s    s1   s2   s3   s4  out1	out2 ans");
 //must define the variables before the first print, otherwise the answer will
-//be x x x x ... 
+//be x x x x ...
 x = 1'b0; y = 1'b0; s = 1'b0;
 #1 $monitor("%4b %4b %4b %4b %4b %4b %4b %4b %4b %4b", x, y, s, s1, s2, s3, s4, mux_out1, mux_out2, mux_out3);
-//here we will shift the values of x and y depending on the multiplexer s 
+//here we will shift the values of x and y depending on the multiplexer s
 //when s == 0
 //#1 	 s = 1'b0;
 //#1   x = 1'b0;  y =  1'b0;
