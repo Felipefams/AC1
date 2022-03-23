@@ -42,23 +42,21 @@ endmodule // test_f5
 	 * that we can allow the user to choose the amount of
 	 * variables he want without the need to inform it.
 	 * */
-	public static int countVariables(String s){
-		int count = 0; 
+	public static List<Character> countVariables(String s){
 		List<Character> list = new ArrayList<Character>();
 		for(int i = 0; i < s.length(); i++){
 			if(Character.isLetter(s.charAt(i))){
 				if(!list.contains(s.charAt(i))){
-					count++;
 					list.add(s.charAt(i));
 				}
 			}
 		}
-		return count;
+		return list;
 	}
 	/*generate the module part, considering the amount of	
 	 *variables the user wants 
 	 * */
-	public static String makeModule(String module, int n){
+	public static String makeModule(String module, List list<Character>, int n){
 		//yet to write
 		if(n > 0){	
 			char c = 122;
@@ -80,10 +78,12 @@ endmodule // test_f5
    public static void main(String[] args){
 	   //reading the logical expression
 	   FastReader fr = new FastReader();
+	   List<Character> list = new ArrayList<Character>();
 	   System.out.println("logical expression: ");
 	   String expr = fr.nextLine();
 	   //counting the amount of variables
-	   int variables = countVariables(expr);
+	   list = countVariables(expr);
+	   int variables = list.size();
 	   System.out.println(variables);
 	   //module name
 	   String module = "module f ( output s ";
@@ -143,3 +143,4 @@ endmodule // test_f5
         }
     }
 }
+
