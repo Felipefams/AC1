@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 import entities.Arq;
-public class logicalExpressionParser{
+public class logicalExpressionParser {
 	/* Example code in verilog 
 
 module f ( output s,input x,input y, input z );
@@ -53,31 +53,36 @@ endmodule // test_f5
 		}
 		return list;
 	}
+
+	public static String makeModule(String module, List<Character> list){
+		return makeModule(module, list, 0);
+	}
+	
 	/*generate the module part, considering the amount of	
 	 *variables the user wants 
 	 * */
-	public static String makeModule(String module, List list<Character>, int n){
+	public static String makeModule(String module, List<Character> list, int n){
 		//yet to write
-		if(n > 0){	
-			char c = 122;
-       	 	String s = module + ", input " + (char)(c-n);
-			return makeModule(s, n - 1);
+		if(n < list.size()){	
+       	 	String s = module + ", input " + list.get(n);
+			return makeModule(s, list, n+1);
 		}
         return module;
 	}
-	public static String makeReg(String reg, int n){
-		if(n > 0){
-			char c = 122;
-			String s = reg + (char)(c-n) + ";\n"; 
-			return makeReg(s, n - 1);
+	
+	public static String makeReg(List<Character> list){
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i < list.size(); i++){
+			sb.append("reg " + list.get(i) + ";\n");
 		}
-		return reg;
+		return sb.toString();
 	}
 
 
    public static void main(String[] args){
 	   //reading the logical expression
 	   FastReader fr = new FastReader();
+	   //so basically we are making a list with the variable names the user is using  
 	   List<Character> list = new ArrayList<Character>();
 	   System.out.println("logical expression: ");
 	   String expr = fr.nextLine();
@@ -87,13 +92,14 @@ endmodule // test_f5
 	   System.out.println(variables);
 	   //module name
 	   String module = "module f ( output s ";
-	   String module_done = module + makeModule(module, variables) + ");";
-	   String reg = "reg ";
-	   String reg_done = reg + makeReg(reg, variables); 
+	   String module_done = makeModule(module, list) + ");";// this is the complete module part
+	   //make n values based on the value on the list of variables
+	   String reg_done = makeReg(list);
+	   System.out.println(module_done);
 	   System.out.println(reg_done);
    }
 
-   //class for I/O reading
+   //class for I/O
     static class FastReader {
         // BufferedReader br;
         StringTokenizer st;
