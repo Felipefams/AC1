@@ -21,7 +21,7 @@ wire different, borrow;
 halfSub teste(different, borrow, a, b);
 initial begin
 $display("Exemplo0802 - Felipe Augusto Morais Silva- 748473");
-$display("Test ALU's full subtractor");
+$display("Test ALU's half subtractor");
 $display("   a   -    b =   ans");
 $monitor("%4b   - %4b = %4b", a, b, different);
 	a = 1'b0;
