@@ -1,27 +1,35 @@
 // -------------------------
-// Exemplo_0802 - Equality 
+// Exemplo_0804 - 
 // Nome:Felipe Augusto Morais Silva 
 // Matricula:748473 
 // -------------------------
 // -------------------------
-//  Equality
+// 1's complement 
 // -------------------------
-module equals (output s, input a, input b);
-wire a;
-xnor XNOR1(s,a,b);
-endmodule // equality operator 
-// -------------------------
-// full subtractor
-// ------------------------- parte principal
+module comp1 (output s, input a);
+not NOT1(s, a);
+endmodule // inequality operator
+//full adder
+module fullAdder ( output sum, output cout, input a, input b, input cin );
+	assign {sum,cout} = a + b + cin;
+endmodule // fullAdder
+//2's complement
+module comp2 (output sum, output cout, input a, input b, input carry);
+	wire comp_1,comp_2;
+	comp1(comp_1, a);
+	comp1(comp_2, b);
+	fullAdder(sum,cout, comp1, comp2, 1);
+endmodule
 module halfSubTeste;
-reg a, b;
-wire s;
-equals teste(s, a, b);
+reg a, b, carry;
+carry = 1;
+wire cout,sum;
+comp2 teste(sum, cout, a, b, carry);
 initial begin
-$display("Exemplo0802 - Felipe Augusto Morais Silva- 748473");
-$display("Test ALU's equality test");
-$display("   a   ==    b =   ans");
-$monitor("%6b   == %6b = %6b", a, b, s);
+$display("Exemplo0804 - Felipe Augusto Morais Silva- 748473");
+$display("Test ALU's comp2 test");
+$display("   a       b =   sum     cout");
+$monitor("%6b    %6b = %6b    %6b", a, b, sum, cout);
            a = 6'b000000; b = 6'b000001; 
 		#1 a = 6'b000000; b = 6'b000010; 
 		#1 a = 6'b000000; b = 6'b000011; 

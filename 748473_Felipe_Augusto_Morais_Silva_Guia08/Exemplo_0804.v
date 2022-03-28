@@ -1,27 +1,36 @@
 // -------------------------
-// Exemplo_0802 - Equality 
+// Exemplo_0804 - 
 // Nome:Felipe Augusto Morais Silva 
 // Matricula:748473 
 // -------------------------
 // -------------------------
 //  Equality
 // -------------------------
-module equals (output s, input a, input b);
-wire a;
-xnor XNOR1(s,a,b);
-endmodule // equality operator 
+module halfDiff (output s0, output s1, input a, input b);
+xor XOR1(s0,a,b);
+not NOT1(NOT1, a);
+and (s1, NOT1, b);
+endmodule // inequality operator
+
+module fullDiff (output s0, output s1, input a, input b, input carry);
+wire inf_hd_U, inf_hd_B; //inferior halfDiff upper wire, inferior halfDiff bottom wire
+wire sup_hd_B; //superior halfDiff bottom wire
+halfDiff hd1(inf_hd_U, inf_hd_B, a, b);
+halfDiff hd2(s0, sup_hd_B, inf_hd_U, carry);
+and AND1(s1, sup_hd_B, inf_hd_B);
+endmodule
 // -------------------------
 // full subtractor
 // ------------------------- parte principal
 module halfSubTeste;
-reg a, b;
-wire s;
-equals teste(s, a, b);
+reg a, b, carry;
+wire s1,s0;
+fullDiff teste(s0, s1, a, b, carry);
 initial begin
-$display("Exemplo0802 - Felipe Augusto Morais Silva- 748473");
-$display("Test ALU's equality test");
-$display("   a   ==    b =   ans");
-$monitor("%6b   == %6b = %6b", a, b, s);
+$display("Exemplo0804 - Felipe Augusto Morais Silva- 748473");
+$display("Test ALU's inequality test");
+$display("   a       b =   s0     s1");
+$monitor("%6b    %6b = %6b    %6b", a, b, s0, s1);
            a = 6'b000000; b = 6'b000001; 
 		#1 a = 6'b000000; b = 6'b000010; 
 		#1 a = 6'b000000; b = 6'b000011; 
