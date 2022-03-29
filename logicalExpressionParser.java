@@ -117,16 +117,44 @@ public class logicalExpressionParser {
 		for(int i = 0; i < binaryList.size(); i++){
 			sb.append("#1 ");
 			for(int j = 0; j < charList.size(); j++){
-				sb.append(charList.get(j) + "=1'b" + binaryList.get(i).charAt(j));
+				sb.append(charList.get(j) + "=1'b" + binaryList.get(i).charAt(j) + "; ");
 			}
-			sb.append(";\n");
+			sb.append("\n");
 		}
 		return sb.toString();
 	}
+	
+	public static String makeModule2(String module, List<Character> list) {
+		return makeModule2(module, list, 0);
+	}
+
+	public static String makeModule2(String module, List<Character> list, int n) {
+		// yet to write
+		if (n < list.size()) {
+			String s = module + ", " + list.get(n);
+			return makeModule2(s, list, n + 1);
+		}
+		return module;
+	}
 
 	public static String generateMonitor(List<Character> charList){
-		StringBuilder sb = new StringBuilder("$monitor");
+		StringBuilder sb = new StringBuilder("$monitor(\" ");
+		for(int i = 0; i < charList.size(); i++){
+			sb.append("%4b ");
+		}
+		// sb.append("\");");
+		return sb.toString();
 	}
+
+	public static String generateDisplay(List<Character> charList){
+		StringBuilder sb = new StringBuilder("$display(\" ");
+		for(int i = 0; i < charList.size(); i++){
+			sb.append("   " + charList.get(i) + " ");
+		}
+		sb.append("=    a \");");
+		return sb.toString();
+	}
+
 	public static void main(String[] args) {
 		FastReader fr = new FastReader();
 		// so basically we are making a list with the variable names the user is using
@@ -134,21 +162,31 @@ public class logicalExpressionParser {
 		List<String> binaryList = new ArrayList<>();
 		System.out.println("logical expression: ");
 		String expr = fr.nextLine();
+		System.out.println("filename(with .v at the end):");
+		String filename = fr.next();
 		// counting the amount of variables
 		list = countVariables(expr);
 		final int variables = list.size();
-		System.out.println(variables);
 		// module name
 		// String module = "module f ( output s " ;
-		String module = makeModule("module f ( output s ", list) + ");\n" + "assign s = " + expr + "endmodule //f";// this is the complete module part
+		String module = makeModule("module f ( output s ", list) + ");\n" + "assign s = " + expr + ";\n" + "endmodule //f\n";// this is the complete module part
 		// make n values based on the value on the list of variables
 		String reg = makeReg(list);
 		binaryList = generateGrayCode(variables);	
 		String testCases = divideGrayCode(binaryList, list);
-		String testModule = "module teste_f;\n" + reg + "wire a" + ;
-		System.out.println(module);
-		System.out.println(reg);
-		System.out.println(testCases);
+		String testModule = "module test_f;\n" + reg + "wire a;\n" + makeModule2("f module_test (a", list) + ");\n";
+		String testMonitor = generateMonitor(list) + "= %4b\"" + makeModule2(" ", list) + ", a);";
+		String testDisplay = generateDisplay(list);
+
+		String final_Result = module + testModule + "initial\nbegin : main\n$display(\"test module\");\n" + testDisplay + "\n" + testMonitor + "\n" + testCases + "end\nendmodule //test";
+		Arq.openWriteClose(filename, final_Result);
+		// try{
+		// 	Runtime.getRuntime().exec(new String[] {"iverilog -o " + filename + "vp " + filename});
+		// 	Runtime.getRuntime().exec(new String[]{"vvp " + filename + "vp"});
+		// }catch(Exception e){
+		// 	System.out.println("You did something wrong");
+		// 	e.printStackTrace();
+		// }
 	}
 
 	// class for I/O
