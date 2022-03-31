@@ -1,9 +1,5 @@
 //requisitos do artigo
-3.) Segundo os textos recomendados, definir e caracterizar
-SPLD - Simple PLD's Programmable Logic devices
-CPLD - Complex Programmable Logic Devices  
-SOC
-FPGA - Field Programmable Gate Array
+
 4.) Diferenciar (sugestão: montar uma tabela)
 PROM
 PLA - Programmable Logic Array
@@ -21,11 +17,19 @@ ASIC - Application Specific Integrated Circuits (ou CI' s customizados)
 Os ASICs ou CIs customizados, se caracterizam principalmente pela necessidade de um processo de fabricacao especial, que requer mascaras especificas para cada projeto. Essa caracteristica acarreta em altos custos de projeto e um longo tempo de desenvolvimento para esse tipo de implementacao, em caso de grandes implementacoes esse alto custo eh amortizado.(Thiago et al, 2005)
 
 ASSP - Application-Specific Standard Product
-uma ASSP eh um circuito integrado dedicado a uma aplicacao especifica de mercado e vendido para mais de um usuario. Um tipo de logica embarcada programavel, os ASSP's combinam produtos digitais, analogicos e de sinais mistos. O ASSP quando vendido para apenas um usuario, eh chamado de ASIC. 
-
+uma ASSP eh um circuito integrado dedicado a uma aplicacao especifica de mercado e vendido para mais de um usuario. Um tipo de logica embarcada programavel, os ASSP's combinam produtos digitais, analogicos e de sinais mistos. O ASSP quando vendido para apenas um usuario, eh chamado de ASIC.(https://www.gartner.com/en/information-technology/glossary/assp-application-specific-standard-product, 2021, minha traducao). 
 
 SPLD - Simple PLD's Programmable Logic devices
+Os SPLD's sao dispositivos pouco custosos (Simple) que apresentam como caracteristica principal a capacidade de configuracao pos fabricacao feita pleo usuario, fazendo com que circuitos que utilizem essa tecnologia sejam mais facilmente modificados posteriormente.
+
+CPLD - Complex PLD's Programmable Logic Devices
+Os CPLD's, contrarios aos SPLD's, vem como uma solucao para aumentar a capacidade de arquitetura dos SPLD's, entao esses dispositivos sao basicamente dispositivos com a mesma funcao, mas maior capacidade do que os SPLD's.
+
+SOC - System on a chip
+SOC's sao basicamente circuitos em um chip que integram total, ou parcialmente os componentes de um computador ou outros sistemas elestronicos,. Esses componentes quase sempre incluem uma unidade de processamentro central (CPU), memoria, e portas de /input/output/. (Badawy et al, "System-on-Chip for Real-Time Applications", minha traducao).
 
 FPGA - Field Programmable Gate Array
 Um FPGA consiste de um grande arranjo de celulas configuraveis (ou blocos logicos) contidos em um unico chip. Cada uma dessas celulas consegue implementar funcoes logicas ou impedir a comunicacao entre outras celulas. O primeiro modelo do tipo foi desenvolvido em 1984 pela Xilinx
+
+Tabelas: 
 
