@@ -1,0 +1,31 @@
+//requisitos do artigo
+3.) Segundo os textos recomendados, definir e caracterizar
+SPLD - Simple PLD's Programmable Logic devices
+CPLD - Complex Programmable Logic Devices  
+SOC
+FPGA - Field Programmable Gate Array
+4.) Diferenciar (sugestão: montar uma tabela)
+PROM
+PLA - Programmable Logic Array
+PAL - Programmable Array Logic
+5.) Diferenciar (sugestão: montar uma tabela)
+CPLD - Complex Programmable Logic Devices
+FPGA - Field Programmable Gate Arrays
+
+ASIC - 
+
+
+Respostas
+
+ASIC - Application Specific Integrated Circuits (ou CI' s customizados)
+Os ASICs ou CIs customizados, se caracterizam principalmente pela necessidade de um processo de fabricacao especial, que requer mascaras especificas para cada projeto. Essa caracteristica acarreta em altos custos de projeto e um longo tempo de desenvolvimento para esse tipo de implementacao, em caso de grandes implementacoes esse alto custo eh amortizado.(Thiago et al, 2005)
+
+ASSP - Application-Specific Standard Product
+uma ASSP eh um circuito integrado dedicado a uma aplicacao especifica de mercado e vendido para mais de um usuario. Um tipo de logica embarcada programavel, os ASSP's combinam produtos digitais, analogicos e de sinais mistos. O ASSP quando vendido para apenas um usuario, eh chamado de ASIC. 
+
+
+SPLD - Simple PLD's Programmable Logic devices
+
+FPGA - Field Programmable Gate Array
+Um FPGA consiste de um grande arranjo de celulas configuraveis (ou blocos logicos) contidos em um unico chip. Cada uma dessas celulas consegue implementar funcoes logicas ou impedir a comunicacao entre outras celulas. O primeiro modelo do tipo foi desenvolvido em 1984 pela Xilinx
+
