@@ -1,9 +1,5 @@
 //requisitos do artigo
 
-4.) Diferenciar (sugestão: montar uma tabela)
-PROM
-PLA - Programmable Logic Array
-PAL - Programmable Array Logic
 5.) Diferenciar (sugestão: montar uma tabela)
 CPLD - Complex Programmable Logic Devices
 FPGA - Field Programmable Gate Arrays
@@ -46,5 +42,23 @@ ____|_______|_______|_______|
 	|		|		|		|
 PAL	| baixo	|	P	|	F	|
 ____|_______|_______|_______|
+
+simpl* -> simplicidade
+vol* -> volatilidade
+cons* -> consumo
+segur* -> seguranca
+RL* -> recursos logicos
+
+ 5)	| simpl.|  vol.	| cons.	| preco | poder	| segur.|  RL.	|		
+____|_______|_______|_______|_______|_______|_______|_______|
+	|		|		|		|		|		|		|		|
+CPLD| maior	| menor	| menor	| menor	| menor	| maior	| menor	|
+____|_______|_______|_______|_______|_______|_______|_______|
+	|		|		|		|		|		|		|		|
+FPGA| menor	| maior | maior	| maior	| maior	| menor	| maior	|
+____|_______|_______|_______|_______|_______|_______|_______|
+
+quando um circuito requer fucionalidades simples e que provavelmente nao vao exigir uma mudanca constante no futuro, a opcao correta eh escolher as CPLD, caso contrario, va sempre de FPGA. Existem circuitos com as duas tambem, nesse caso, geralmente, a CPLD faz apenas as conexoes simples e sao responsaveis apenas por bootar a FPGA 
+
 
 
