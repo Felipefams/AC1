@@ -32,4 +32,19 @@ FPGA - Field Programmable Gate Array
 Um FPGA consiste de um grande arranjo de celulas configuraveis (ou blocos logicos) contidos em um unico chip. Cada uma dessas celulas consegue implementar funcoes logicas ou impedir a comunicacao entre outras celulas. O primeiro modelo do tipo foi desenvolvido em 1984 pela Xilinx
 
 Tabelas: 
+P* -> Programavel
+F* -> Fixo
+
+ 4)	| Custo	|  and	|	or	|	
+____|_______|_______|_______|
+	|		|		|		|
+PROM| baixo	| 	F	|	P	|
+____|_______|_______|_______|
+	|		|		|		|
+PLA	| baixo	|	P	|	F	|
+____|_______|_______|_______|
+	|		|		|		|
+PAL	| baixo	|	P	|	F	|
+____|_______|_______|_______|
+
 
