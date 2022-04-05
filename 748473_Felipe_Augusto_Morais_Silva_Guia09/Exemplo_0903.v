@@ -83,7 +83,7 @@ pulse4
  pls4
  ( p4, clock );
 initial begin
-$dumpfile ( " Exemplo0903.vcd" );
+$dumpfile ( " Exemplo_0903.vcd" );
 $dumpvars ( 1, clock, p1, p2, p3, p4 );
 #480 $finish;
 end
