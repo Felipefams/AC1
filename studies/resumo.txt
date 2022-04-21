@@ -1,0 +1,34 @@
+SoP -> forma canonica disjuntiva
+PoS -> forma canonica conjuntiva
+
+to subtract a number Y from a number X (X-Y) all you need to do is sum the first value(in this case X) to de 2's complement(~number + 1) of the value you want to subtract, as followwing:
+X + (~Y + 1)
+//exemplo melhor no guia_0304
+
+!!! important
+MIN_T 1 (SoP) termos iguais a 1 na disj das conj -> forma canonica disjuntiva (canonical disjunctive normal form)
+MAX_T 0 (PoS) termos iguais a 0 na conj das disj -> forma canonica conjuntiva (canonical conjunctive normal form)
+
+    Tabelas:
+    __________________________
+   | a\bc | 00 | 01 | 11 | 10 |
+   |------|----|----|----|----|
+   | 0    | 0  | 2  | 6  | 4  |
+   |------|----|----|----|----|
+   | 1    | 1  | 3  | 7  | 5  |
+   |______|____|____|____|____|
+
+     __________________________
+    |xy\wz | 00 | 01 | 11 | 10 |
+    |------|----|----|----|----|
+    | 00   | 0  | 1  | 3  | 2  |
+    |------|----|----|----|----|
+    | 01   | 4  | 5  | 7  | 6  |
+    |______|____|____|____|____|
+    | 11   | 12 | 13 | 15 | 14 |
+    |------|----|----|----|----|
+    | 10   | 8  | 9  | 11 | 10 |
+    |______|____|____|____|____|
+
+
+

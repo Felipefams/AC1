@@ -1,0 +1,605 @@
+Pontifícia Universidade Católica de Minas Gerais
+Curso de Ciência da Computação
+AC1 - AVALIAÇÃO 01 -  Data: 14/10/2021
+
+Nome: Danielle Dias Vieira  Matrícula: 723185
+                                                             a  b  c  d  e  f
+
+Instruções                                  Tempo previsto: 110m + Extra:  40m
+
+Preencher e enviar para a Tarefa A01 no Canvas.
+Haverá apenas três (3) tentativas para postar as respostas.
+Favor enviar pelo menos uma vez até às 12:00h.
+
+Escolher apenas opção considerada correta.
+Se não houver, JUSTIFICAR suas respostas ao final.
+
+Respostas
+Favor não alterar o formato do gabarito.
+
+01  02	03  04  05  06  07  08	09  10
+[D] [A] [D] [A] [A] [B] [A] [B] [A] [D]
+
+11  12	13  14  15  16	17  18	19  20
+[B] [B] [C] [B] [E] [C] [C] [B] [C] [E]
+
+Questões
+Para as questões abaixo, considerar a seguinte tabela
+
+00 1    04 0    08 1   0C 0
+01 0    05 1    09 0   0D 0
+02 1    06 0    0A 1   0E 0
+03 1    07 0    0B 1   0F 1
+
+SoP ( 0, 2, 3, 5, 8, 10, 11, 15)
+     __________________________
+    |xy\wz | 00 | 01 | 11 | 10 |
+    |------|----|----|----|----|
+    | 00   | 1  | 0  | 1  | 1  |
+    |------|----|----|----|----|
+    | 01   | 0  | 1  | 0  | 0  |
+    |______|____|____|____|____|
+    | 11   | 0  | 0  | 0  | 0  |
+    |------|----|----|----|----|
+    | 10   | 1  | 0  | 1  | 1  |
+    |______|____|____|____|____|
+
+     _______________________ 
+    | m | a b c d |SoP | s0 |
+    |---|---------|----|----|
+    | 0 | 0 0 0 0 | 1  |    |
+    | 1 | 0 0 0 1 | 0  |    |
+    | 2 | 0 0 1 0 | 0  |    |
+    | 3 | 0 0 1 1 |    |    |
+    | 4 | 0 1 0 0 |    |    |
+    | 5 | 0 1 0 1 |    |    |
+    | 6 | 0 1 1 0 |    |    |
+    | 7 | 0 1 1 1 |    |    |
+    | 8 | 1 0 0 0 |    |    |
+    | 9 | 1 0 0 1 |    |    |
+    | A | 1 0 1 0 |    |    |
+    | B | 1 0 1 1 |    |    |
+    | C | 1 1 0 0 |    |    |
+    | D | 1 1 0 1 |    |    |
+    | E | 1 1 1 0 |    |    |
+    | F | 1 1 1 1 |    |    |
+    |___|_________|____|____|
+
+01.) A expressão canônica na forma normal conjuntiva
+     é igual a 
+
+[ ]  a.) a'b'c'd' + a'b'c'd  + a'b'c d  + a'b c'd  + 
+         a b'c'd' + a b'c d' + a b'c d  + a b c d  
+		 
+[ ]  b.) a'b'c'd' + a'b'c d' + a'b'c d  + a'b c'd  + 
+         a b'c'd' + a b'c d' + a b c'd  + a b c d  
+		 
+[ ]  c.) a'b'c'd' + a'b'c d' + a'b'c d  + a'b c'd  + 
+         a b'c'd' + a b'c d' + a b c'd  + a b c d  
+		 
+[x]  d.) a'b'c'd' + a'b'c d' + a'b'c d  + a'b c'd  + 
+         a b'c'd' + a b'c d' + a b'c d  + a b c d  
+		 
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+02.) A expressão canônica na forma normal disjuntiva
+     é igual a 
+	 
+PoS ( 1, 4, 6, 7, 9, 12, 13, 14)	 
+
+[x]  a.) (A +B+C+D').(A +B'+C +D).(A +B'+C'+D ).(A +B'+C'+D').
+         (A'+B+C+D').(A'+B'+C +D).(A'+B'+C +D').(A'+B'+C'+D )
+		 
+[ ]  b.) (A +B+C+D').(A +B +C'+D).(A +B'+C'+D ).(A +B'+C'+D').
+         (A'+B+C+D').(A'+B'+C +D).(A'+B'+C +D').(A'+B'+C'+D )
+		 
+[ ]  c.) (A +B+C+D').(A +B'+C +D).(A +B'+C +D').(A +B'+C'+D').
+         (A'+B+C+D').(A'+B'+C +D).(A'+B'+C +D').(A'+B'+C'+D )
+		 
+[ ]  d.) (A +B+C+D').(A +B'+C +D).(A +B'+C'+D ).(A +B'+C'+D').
+         (A'+B+C+D').(A'+B'+C +D).(A'+B'+C'+D ).(A'+B'+C'+D')
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+03.) A expressão SoP simplificada pelo mapa de Veitch-Karnaugh
+     é igual a
+	 
+	f (a,b,c,d) = ? m ( 0, 2, 3, 5, 8, 10, 11, 15)
+
+	 _____________________________
+	| ab / cd | 00 | 01 | 11 | 10 |     Com (2, 3, 10, 11):  b' . c 
+	| 00      |  1 |  0 |  1 |  1 |     Com (0, 2, 8, 10):   b' . d' 
+	| 01      |  0 |  1 |  0 |  0 |		Com (11, 15):        a  . c . d
+	| 11      |  0 |  0 |  1 |  0 |		Com (5):             a' . b . c' . d
+	| 10      |  1 |  0 |  1 |  1 |
+	-------------------------------
+
+[ ]  a.)  b'd' + b'c' + a'b c'd  + a c d
+[ ]  b.)  b'd' + b'c  + a'b c'd' + a c d
+[ ]  c.)  b'd' + b'c  + a'b c d' + a c d
+[x]  d.)  b'd' + b'c  + a'b c'd  + a c d
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+04.) A expressão PoS simplificada pelo mapa de Veitch-Karnaugh
+     é igual a
+	 
+	 F (A, B, C, D) = ? M ( 1, 4, 6, 7, 9, 12, 13, 14 )
+	 
+	 _____________________________
+	| AB / CD | 00 | 01 | 11 | 10 |     Com (4, 6, 12, 14): B' + D  
+	| 00      |  1 |  0 |  1 |  1 |     Com (12, 13):       A' + B' + C   
+	| 01      |  0 |  1 |  0 |  0 |		Com (1, 9):         B  + C  + D'        
+	| 11      |  0 |  0 |  1 |  0 |		Com (7, 6):         A  + B' + C' 
+	| 10      |  1 |  0 |  1 |  1 |
+	-------------------------------
+
+[x]  a.) (B'+D).(B+C +D').(A+B'+C').(A'+B'+C) 
+[ ]  b.) (B'+C).(B+C'+D ).(A+B'+C').(A'+B'+C)  
+[ ]  c.) (B'+D).(B+C +D ).(A+B +C').(A'+B +C)  
+[ ]  d.) (B'+C).(B+C'+D').(A+B'+C').(A'+B +C)  
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+05.) A inclusão do mintermo (14) levará à seguinte
+     simplificação
+	 
+	 f (a,b,c,d) = ? m ( 0, 2, 3, 5, 8, 10, 11, 14, 15)
+
+	 _____________________________
+	| ab / cd | 00 | 01 | 11 | 10 |     Com (2, 3, 10, 11):   b' . c 
+	| 00      |  1 |  0 |  1 |  1 |     Com (0, 2, 8, 10):    b' . d' 
+	| 01      |  0 |  1 |  0 |  0 |		Com (10, 11, 14, 15): a  . c       
+	| 11      |  0 |  0 |  1 |  1 |		Com (5):              a' . b . c' . d
+	| 10      |  1 |  0 |  1 |  1 |
+	-------------------------------
+
+[x]  a.) b'd' + b'c  + a'b c'd + a c
+[ ]  b.) b'd  + b'c  + a'b c'd + a c
+[ ]  c.) b'd' + b c' + a'b'c'd + a c
+[ ]  d.) b'd' + b'c  + a'b'c'd + a c
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+06.) A inclusão do MAXTERMO (15) levará à seguinte
+     simplificação
+	 
+	 F (A, B, C, D) = ? M ( 1, 4, 6, 7, 9, 12, 13, 14, 15)
+	 
+	 _____________________________
+	| AB / CD | 00 | 01 | 11 | 10 |     Com (4, 6, 12, 14):    B' + D  
+	| 00      |  1 |  0 |  1 |  1 |     Com (12, 13, 14, 15):  A' + B'  
+	| 01      |  0 |  1 |  0 |  0 |		Com (1, 9):            B  + C  + D'        
+	| 11      |  0 |  0 |  0 |  0 |		Com (7, 6, 14, 15):    B' + C' 
+	| 10      |  1 |  0 |  1 |  1 |
+	-------------------------------
+
+[ ]  a.) (A'+B ).(B'+C').(B +D).(B+C+D')
+[x]  b.) (A'+B').(B'+C').(B'+D).(B+C+D')
+[ ]  c.) (A'+B ).(B'+C ).(B'+D).(B+C+D')
+[ ]  d.) (A'+B').(B'+C').(B +D).(B+C+D')
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+07.) A supressão do mintermo (15) levará à seguinte
+     simplificação
+	 
+	 f (a,b,c,d) = ? m ( 0, 2, 3, 5, 8, 10, 11)
+	 _____________________________
+	| ab / cd | 00 | 01 | 11 | 10 |     Com (2, 3, 10, 11):   b' . c 
+	| 00      |  1 |  0 |  1 |  1 |     Com (0, 2, 8, 10):    b' . d' 
+	| 01      |  0 |  1 |  0 |  0 |		Com (5):              a' . b . c' . d    
+	| 11      |  0 |  0 |  0 |  0 |		
+	| 10      |  1 |  0 |  1 |  1 |
+	-------------------------------
+
+[x]  a.) b'd' + b'c + a'b c'd
+[ ]  b.) b'd' + b c'+ a'b'c'd
+[ ]  c.) b d' + b'c + a'b c'd
+[ ]  d.) b d' + b c + a'b'c'd
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+08.) A supressão do MAXTERMO (01) levará à seguinte
+     simplificação
+	 
+	 F (A, B, C, D) = ? M ( 4, 6, 7, 9, 12, 13, 14 )
+	 
+	 _____________________________
+	| AB / CD | 00 | 01 | 11 | 10 |     Com (4, 6, 12, 14): B' + D  
+	| 00      |  1 |  1 |  1 |  1 |     Com (9, 13):        A' + C  + D'
+	| 01      |  0 |  1 |  0 |  0 |		Com (7, 6):         A  + B' + C'        
+	| 11      |  0 |  0 |  1 |  0 |		
+	| 10      |  1 |  0 |  1 |  1 |
+	-------------------------------
+
+[ ]  a.) (B'+D).(A+B +C').(A'+C +D )
+[x]  b.) (B'+D).(A+B'+C').(A'+C +D')
+[ ]  c.) (B'+D).(A+B'+C').(A'+C'+D )
+[ ]  d.) (B'+D).(A+B +C').(A'+C'+D')
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+09.) Se os mintermos (01 e 09) forem "don't cares",
+     a escolha que levará à expressão mais simplificada
+     será
+	 
+	 f (a,b,c,d) = ? m ( 0, 1, 2, 3, 5, 8, 9, 10, 11, 15)
+
+	 _____________________________
+	| ab / cd | 00 | 01 | 11 | 10 |     Com (0, 1, 2, 3, 8, 9, 10, 11):  b' 
+	| 00      |  1 |  1 |  1 |  1 |     Com (1, 5):                      a' . c' . d 
+	| 01      |  0 |  1 |  0 |  0 |		Com (11, 15):                    a  . c . d
+	| 11      |  0 |  0 |  1 |  0 |		
+	| 10      |  1 |  1 |  1 |  1 |
+	-------------------------------
+
+[x]  a.) 1 e 1
+[ ]  b.) 1 e 0
+[ ]  c.) 0 e 1
+[ ]  d.) 0 e 0
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+10.) Se os MAXTERMOS (07 e 13) forem "don't cares",
+     a escolha que levará à expressão mais simplificada
+     será
+	 
+	 F (A, B, C, D) = ? M ( 1, 4, 6, 7, 9, 12, 13, 14 )
+	 
+	 _____________________________
+	| AB / CD | 00 | 01 | 11 | 10 |     Com (4, 6, 12, 14): B' + D  
+	| 00      |  1 |  0 |  1 |  1 |     Com (1, 9):         B  + C  + D'    
+	| 01      |  0 |  1 |  1 |  0 |		      
+	| 11      |  0 |  1 |  1 |  0 |		
+	| 10      |  1 |  0 |  1 |  1 |
+	-------------------------------
+
+[ ]  a.) 0 e 0
+[ ]  b.) 0 e 1
+[ ]  c.) 1 e 0
+[x]  d.) 1 e 1
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+11.) A expressão lógica nor(nor(nor(a,b),c),d)
+     é equivalente a 
+	 
+	nor(nor((a + b)',c),d)
+	nor(((a + b)' + c)',d)
+	nor(((a . b) . c'),d)
+	(((a . b) . c') + d)'
+	(((a + b)' + c) . d')
+	 ((a + b)' + c) . d'
+
+[ ]  a.) (a'.b' +c ).d
+[x]  b.) ((a+b)'+c ).d'
+[ ]  c.) ((a+b)'+c').d'
+[ ]  d.)  a'.b' +c' .d 
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+12.) A expressão em Verilog abaixo
+     quando simplificada por Quine-McCluskey
+     levará aos seguintes grupos
+
+     assign s = ~(~(a & c) & ~(b & d));
+	 
+	 (b . d) + (a . c)
+
+[ ]  a.) _1 1_ + 1_1_
+[x]  b.) _1_1  + 1_1_
+[ ]  c.) _1_1  + _1 1_
+[ ]  d.) _1_1  + 1 1_ _
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+13.) A expressão em Verilog abaixo
+     quando simplificada por Veith-Karnaugh
+
+     assign s = ~(~(a & c) & ~(b & d));
+	  							  
+     I.   Formará 2 quadras.
+     II.  Possuirá uma interseção de apenas 1 elemento.
+     III. Será equivalente a outra com apenas 3 pares.
+	 
+	 Desenvolvimento no Rascunho após todas as questões.
+
+[ ]  a.) todas estão corretas
+[ ]  b.) II e III apenas estão corretas
+[x]  c.) I  e II  apenas estão corretas.
+[ ]  d.) I  e III apenas estão corretas
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+14.) Dado um modelo de mux (a, b, chave),
+     onde a saída será (a), se chave = 0,
+     e (b), caso contrário; o circuito abaixo 
+     será equivalente à expressão
+
+     mux ( mux(b,not(c),a), mux(a,c,b), not(c) )
+	 mux ( ((b . a')+(c' . a)), ((a . b') + (c . b)), c')
+	 (((b . a')+(c' . a)) . c) + (((a . b') + (c . b)) . c')	 
+     
+[ ]  a.) a b'c  + a'b c'
+[x]  b.) a b c' + a b'c 
+[ ]  c.) a'b c  + a b c'
+[ ]  d.) a'b'c' + a'b'c
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+15.) Dadas as funções lógicas descritas em Verilog por
+
+     module f ( output s, input a, input b );
+       wire w1;
+       not  NOT_1 (w1, b);
+       or   OR__1 (s , a, w1);
+     endmodule;
+
+     module g ( output s, input a, input b, input c );
+       wire   w1,w2;
+       f f_1 (w1,a ,c);
+       f f_2 (w2,w1,c);
+       f f_3 (s ,w2,b);
+     endmodule;
+
+     E as afirmativas
+
+     I.  g(s, a,b,c) = SoP(0,1,4,5)
+     II. G(S, A,B,C) = (A'+B').(B'+C)
+     II. A tabela-verdade de g é igual a {1,1,0,1,1,1,0,0},
+         em representação BIG-endian. 
+
+[ ]  a.) Apenas I   é verdadeira.
+[ ]  b.) Apenas II  é verdadeira.
+[ ]  c.) Apenas III é verdadeira.
+[ ]  d.) Todas  são   verdadeiras.
+[x]  e.) OUTRA (JUSTIFICAR)
+
+
+16.) Considerar a representação binária com 6 dígitos
+     de valores nos formatos em complemento de dois, 
+     complemento de um e sinal e amplitude. A adição
+     dos negativos equivalentes de (0)11010 e (0)10010 
+     nesses formatos resultará em OVERFLOW 
+	 
+	Números: 011010      010010
+	C1:      100101      101101
+	C2:      100110      101110
+	
+	  100110
+	+ 101110
+	--------
+	 1010100
+
+[ ]  a.) apenas em complemento de 2
+[ ]  b.) apenas em complemento de 1
+[x]  c.) apenas em sinal e amplitude
+[ ]  d.) nos três formatos
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+17.) Dados os valores negativos FBC3 (16) e 3201 (4),
+     representados em suas respectivas bases,
+     os valores positivos equivalentes,
+     considerando a representação em binário e
+     em complemento de dois comum a todos, serão:
+
+[ ]  a.)   043E (16) e   35 (8)
+[ ]  b.)   1087 (10) e 0133 (4)
+[x]  c.)   2075 (8)  e   1F (16)
+[ ]  d.) 200331 (4)  e   33 (10)
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+18.) A divisão em binário dos valores
+     231 (8) e  31 (4) resultará em 
+
+[ ]  a.) quociente =   31 (4) e resto =   0A (16)
+[x]  b.) quociente = 1011 (2) e resto =   12 (8)
+[ ]  c.) quociente =   13 (8) e resto =   12 (4)
+[ ]  d.) quociente =   0B(16) e resto = 1100 (2)
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+19.) O valor decimal mais próximo do número binário
+     em ponto flutuante 0 0111 1100 111 1101 0000 0000 0000 0000
+     considerando 8 dígitos após o separador decimal
+	 
+	 0 0111 1100 111, 1101 0000 0000 0000 0000
+	 001111100111110100000000,00000000
+	 
+	 4095232.00000000 (Base 10)
+
+[ ]  a.) 2.34e-1
+[ ]  b.) 2.42e-1
+[x]  c.) 2.46e-1
+[ ]  d.) 2.50e-1
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+
+20.) Se certo valor x for um número binário de 16 bits,
+     e sua representação em complemento de 2 for F574 (16),
+     o valor y = 8*x será igual a 
+
+[ ]  a.)         22232220  (4)
+[ ]  b.)           125460  (8)
+[ ]  c.)             ABA0 (16)
+[ ]  d.) 1110101010100000  (2)
+[x]  e.) OUTRA (JUSTIFICAR)
+
+	F574 (Base 16) = 1111 0101 0111 0100 (Base 2)
+	Desfazendo complemento de 2 -> Subtraindo 1: 1111 0101 0111 0011
+								   Invertendo:   0000 1010 1000 1100(Base 2) = 2.700( Base 10)
+	Multiplicando por 8 -> 21.600(Base 10) = 101 0100 0110 0000(Base 2)
+	Base 16: 5460
+	Base 4:  11101200
+	Base 8:  52140
+	
+	Nenhuma das opções estão corretas, pois os resultados estão diferentes dos encontrados acima.
+	
+	
+___________________________________
+
+JUSTIFICATIVAS:
+
+-----------------------------------------------------------------QUESTÃO 15
+
+
+module f ( output s, input a, input b );
+	wire w1;
+	not  NOT_1 (w1, b);
+	or   OR__1 (s , a, w1);
+endmodule
+
+module g ( output s, input a, input b, input c );
+	wire   w1,w2;
+	f f_1 (w1,a ,c);
+	f f_2 (w2,w1,c);
+	f f_3 (s ,w2,b);
+endmodule
+																
+module questao15;
+	reg  x, y, w, z;
+	wire s1;
+	
+	// instancias
+	g  G1 (s1, x, y, w);
+	
+	// valores iniciais
+	initial begin: start
+		x=1'bx; y=1'bx; w=1'bx;// indefinidos
+	end
+	
+	// parte principal
+	initial begin: main
+		// identificacao
+
+		// monitoramento
+		$display(" X  Y  W =  s1");
+		$monitor("%2b %2b %2b = %2b", x, y, w, s1);
+		
+		// sinalizacao	
+		#1 x=0; y=0; w=0; 
+		#1 x=0; y=0; w=1; 
+		#1 x=0; y=1; w=0;
+		#1 x=0; y=1; w=1; 
+		#1 x=1; y=0; w=0;
+		#1 x=1; y=0; w=1; 
+		#1 x=1; y=1; w=0; 
+		#1 x=1; y=1; w=1;
+		
+	end
+endmodule // questao15
+
+
+RESPOSTA NA TELA DO TERMINAL:
+ X  Y  W =  s1
+ x  x  x =  x
+ 0  0  0 =  1
+ 0  0  1 =  1
+ 0  1  0 =  1
+ 0  1  1 =  0
+ 1  0  0 =  1
+ 1  0  1 =  1
+ 1  1  0 =  1
+ 1  1  1 =  1
+ 
+ 
+  I.  g(s, a,b,c) = SoP(0,1,4,5)
+  Está errada pois SoP é (0, 1, 2, 4, 5, 6, 7)
+  
+ II. G(S, A,B,C) = (A'+B').(B'+C)
+ Conforme tabela verdade acima feita em verilog o único termo que resulta em 0 é
+ o 3, então seria (A + B' + C')
+ 
+ II. A tabela-verdade de g é igual a {1,1,0,1,1,1,0,0},
+	 em representação BIG-endian. 
+	 Conforme tabela verdade acima feita em verilog nem em BIG-endian ou Litle-endian
+	 seria correto a sequência.
+
+
+
+=====================================RASCUNHO===========================================
+
+---------------------------------------------------------------QUESTÃO 13:
+
+module SoP (output s, input a, b, c, d);
+	// MAXTERMOS
+	assign s = ~(~(a & c) & ~(b & d));
+endmodule // SoP
+
+module questao13;
+	reg  x, y, w, z;
+	wire s1;
+	
+	// instancias
+	SoP  SOP (s1, x, y, w, z);
+	
+	// valores iniciais
+	initial begin: start
+		x=1'bx; y=1'bx; w=1'bx; z=1'bx;// indefinidos
+	end
+	
+	// parte principal
+	initial begin: main
+		// identificacao
+
+		// monitoramento
+		$display(" X  Y  W  Z =  s1");
+		$monitor("%2b %2b %2b %2b = %2b", x, y, w, z, s1);
+		
+		// sinalizacao	
+		#1 x=0; y=0; w=0; z=0;
+		#1 x=0; y=0; w=0; z=1;
+		#1 x=0; y=0; w=1; z=0;
+		#1 x=0; y=0; w=1; z=1;
+		#1 x=0; y=1; w=0; z=0;
+		#1 x=0; y=1; w=0; z=1;
+		#1 x=0; y=1; w=1; z=0;
+		#1 x=0; y=1; w=1; z=1;	
+		#1 x=1; y=0; w=0; z=0;
+		#1 x=1; y=0; w=0; z=1;
+		#1 x=1; y=0; w=1; z=0;
+		#1 x=1; y=0; w=1; z=1;
+		#1 x=1; y=1; w=0; z=0;
+		#1 x=1; y=1; w=0; z=1;
+		#1 x=1; y=1; w=1; z=0;
+		#1 x=1; y=1; w=1; z=1;
+		
+	end
+endmodule // questao13
+
+RESPOSTA NA TELA DO TERMINAL:
+ X  Y  W  Z =  s1
+ x  x  x  x =  x
+ 0  0  0  0 =  0
+ 0  0  0  1 =  0
+ 0  0  1  0 =  0
+ 0  0  1  1 =  0
+ 0  1  0  0 =  0
+ 0  1  0  1 =  1    <-----
+ 0  1  1  0 =  0
+ 0  1  1  1 =  1	<-----
+ 1  0  0  0 =  0
+ 1  0  0  1 =  0
+ 1  0  1  0 =  1	<-----
+ 1  0  1  1 =  1	<-----
+ 1  1  0  0 =  0
+ 1  1  0  1 =  1	<-----
+ 1  1  1  0 =  1	<-----
+ 1  1  1  1 =  1	<-----
+ 
+ 	 
+	f (a,b,c,d) = ? m ( 5, 7, 10, 11, 13, 14, 15)
+
+	 _____________________________
+	| ab / cd | 00 | 01 | 11 | 10 |     Com (5, 7, 13, 15):   b . d 
+	| 00      |  0 |  0 |  0 |  0 |     Com (10, 11, 14, 15): a . c   
+	| 01      |  0 |  1 |  1 |  0 |		
+	| 11      |  0 |  1 |  1 |  1 |		    
+	| 10      |  0 |  0 |  1 |  1 |
+	-------------------------------
+
+
