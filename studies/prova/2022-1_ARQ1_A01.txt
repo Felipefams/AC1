@@ -1,0 +1,352 @@
+2022-1_ARQ1_A01
+
+Enunciado em Arquivos no Canvas. 
+2022-1_ARQ1_A01a.txt
+
+Entregar em Tarefas no Canvas.   
+2022-1_ARQ1_A01
+At� �s 12:20h. 
+
+Perguntas para o chat do Teams.
+Pontif�cia Universidade Cat�lica de Minas Gerais
+Curso de Ci�ncia da Computa��o
+AC1 - AVALIA��O 01 -  Data: 22/04/2022
+
+Nome: Felipe Augusot Morais Silva  Matr�cula: 748473 
+                                                             a  b  c  d  e  f
+
+Instru��es                                  Tempo previsto: 90m + Extra: 30m
+
+Preencher e enviar para a tarefa P01 no Canvas (3 tentativas).
+Favor enviar pelo menos uma vez at� �s 12:00h.
+
+Escolher apenas op��o considerada correta.
+Se n�o houver, JUSTIFICAR suas respostas ao final.
+
+Respostas (Favor N�O alterar o formato do gabarito).
+
+01  02	03  04  05  06  07  08	09  10
+[c] [e] [b] [e] [a] [d] [b] [e] [a] [e]
+
+11  12	13  14  15  16	17  18	19  20
+[b] [b] [d] [c] [a] [d] [b] [c] [b] [b]
+
+
+Quest�es
+Para as quest�es de 01 a 10, 
+considerar a seguinte tabela-verdade:
+
+0 1 2 3 4 5 6 7 8 9 A B C D E F
+0 1 0 0 0 1 1 0 0 0 1 1 1 1 1 0
+
+01.) A express�o SoP equivalente simplificada 
+     pelo mapa de Veitch-Karnaugh � igual a
+
+     SoP(1,5,6,10,11,12,13,14)
+     __________________________
+    |ab\cd | 00 | 01 | 11 | 10 |
+    |------|----|----|----|----|
+    | 00   | 0  | 1  | 0  | 0  |
+    |------|----|----|----|----|
+    | 01   | 0  | 1  | 0  | 1  |
+    |______|____|____|____|____|
+    | 11   | 1  | 1  | 0  | 1  |
+    |------|----|----|----|----|
+    | 10   | 0  | 0  | 1  | 1  |
+    |______|____|____|____|____|
+
+[ ] a.) a.b'.c  + a.b.c' + b.c.d  + a'.c .d
+[ ] b.) a.b .c' + a.b.c' + b.c.d' + a'.c .d
+[x] c.) a.b'.c  + a.b.c' + b.c.d' + a'.c'.d
+[ ] d.) a.b'.c' + a.b.c' + b.c.d  + a'.c'.d
+[ ] e.) OUTRA (JUSTIFICAR)
+ 
+02.) A express�o PoS equivalente simplificada 
+     pelo mapa de Veitch-Karnaugh � igual a
+
+     PoS(0,2,3,4,7,8,9,15)
+     __________________________
+    |ab\cd | 00 | 01 | 11 | 10 |
+    |------|----|----|----|----|
+    | 00   | 0  | 1  | 0  | 0  | 
+    |------|----|----|----|----| 
+    | 01   | 0  | 1  | 0  | 1  |
+    |______|____|____|____|____|
+    | 11   | 1  | 1  | 0  | 1  |
+    |------|----|----|----|----|
+    | 10   | 0  | 0  | 1  | 1  |
+    |______|____|____|____|____|
+
+[ ] a.) (A+B+C).(A+C+D).(A'+B+C).(B'+C+D')
+[ ] b.) (A+B+D).(A+B+C).(A'+B+C).(B'+C+D')
+[ ] c.) (A+B+C).(A+C+D).(A'+B+D).(B +C+D )
+[ ] d.) (A+B+C).(A+C+D).(A'+B+D).(B'+C+D )
+[x] e.) OUTRA (JUSTIFICAR) 
+
+03.) A inser��o do mintermo (4) ...
+
+[ ] a.) aumentar� as depend�ncias das vari�veis (a) e (b)
+[x] b.) reduzir�  as depend�ncias das vari�veis (a) e (c)
+[ ] c.) aumentar� as depend�ncias das vari�veis (a) e (c)
+[ ] d.) reduzir�  as depend�ncias das vari�veis (a) e (b)
+[ ] e.) OUTRA (JUSTIFICAR)
+
+04.) A inser��o do MAXTERMO (6) incluir� mais ...
+
+[ ] a.) 3 interse��es com 1 termo cada
+[ ] b.) 2 interse��es com 1 termo cada
+[ ] c.) 1 interse��o  com 2 termos 
+[ ] d.) 1 interse��o  com 1 termo e 1 interse��o com 2 termos
+[x] e.) OUTRA (JUSTIFICAR) 
+
+05.) A inser��o de um "don't care" (x) no termo (13)
+     ter� como impacto na express�o simplificada PoS
+
+[x] a.) nenhum 
+[ ] b.) redu��o no n�mero de pares
+[ ] c.) redu��o no n�mero de quadras
+[ ] d.) aumento no n�mero de quadras
+[ ] e.) OUTRA (JUSTIFICAR)
+
+06.) A inser��o de um "don't care" (x) no termo (15)
+     ter� como impacto na express�o simplificada SoP
+
+[ ] a.) nenhum
+[ ] b.) aumento no n�mero de pares 
+[ ] c.) redu��o no n�mero de quadras
+[x] d.) aumento no n�mero de quadras
+[ ] e.) OUTRA (JUSTIFICAR)
+
+07.) As inser��es dos mintermos (4) e (9) levar�o
+     � express�o equivalente em Verilog
+
+[ ] a.) assign s =  c&d | b& d | a&~b&c;
+[x] b.) assign s = ~c&d | b&~d | a&~b&c;
+[ ] c.) assign s = ~c&d | b&~d | a& b&c;
+[ ] d.) assign s =  c&d | b& d | a& b&c;
+[ ] e.) OUTRA (JUSTIFICAR)
+
+08.) As inser��es dos MAXTERMOS (6) e (B) levar�o
+     � express�o equivalente em Verilog
+
+[ ] a.) assign S = (A|~B) & (~C|~D) & (~A|B|C);
+[ ] b.) assign S = (A| B) & (~C| D) & ( A|B|C);
+[ ] c.) assign S = (A| B) & (~C|~D) & (~A|B|C);
+[ ] d.) assign S = (A|~B) & (~C| D) & ( A|B|C);
+[x] e.) OUTRA (JUSTIFICAR) -> 
+
+09.) A inser��o do mintermo (8) na express�o simplificada
+     por Quine-McCluskey acrescentar� o termo 
+
+[x] a.) 1 _ _ 0 
+[ ] b.) 0 _ _ 1
+[ ] c.) _ 1 0 _
+[ ] d.) _ 0 1 _
+[ ] e.) OUTRA (JUSTIFICAR)
+
+10.) A remo��o do MAXTERMO (4) na express�o simplificada
+     por Quine-McCluskey remover� o termo
+
+[ ] a.) _ 1 1 1
+[ ] b.) 0 0 1 _
+[ ] c.) 0 _ 0 0
+[ ] d.) 1 0 0 _
+[x] e.) OUTRA (JUSTIFICAR) 
+
+11.) Dado um modelo de mux (a, b, chave),
+     onde a sa�da ser� (a), se chave = 0,
+     e (b), caso contr�rio; a descri��o de 
+     circuito abaixo ser� equivalente ao algoritmo
+
+     s = mux ( mux(not(b),not(c),not(a)), mux(not(a),c,b), not(c) );
+
+[ ] a.) if ( a ) { s = xor  ( b, c ); } else { s = 0 };
+[b] b.) if ( a ) { s = xnor ( b, c ); } else { s = b };
+[ ] c.) if ( a ) { s = nor  ( b, c ); } else { s = 0 };
+[ ] d.) if ( a ) { s =  or  ( b, c ); } else { s = c };
+[ ] e.) OUTRA (JUSTIFICAR)
+
+12.) A express�o algor�tmica abaixo � equivalente a
+
+     s = nor (nor(a,b), nor(b,d));
+
+[ ] a.) a + b.d
+[x] b.) b + a.d
+[ ] c.) c + a.b
+[ ] d.) d + b.c
+[ ] e.) OUTRA (JUSTIFICAR)
+
+13.) O c�digo Braille poderia usar a seguinte representa��o
+     para algarismos em decimal/bin�rio/hexadecimal
+
+      0  1  2  3  4  5  6  7  8  9  (decimal)
+
+     01 10 10 11 11 10 11 11 10 01  (bin�rio
+     11 00 10 00 01 01 10 11 11 10   Braille)
+
+      7  8  A  C  D  9  E  F  B  6  (hexadecimal)
+
+     O resultado da opera��o abaixo em Braille ser� igual a
+
+     10 11 10  -  01 01 11
+     00 00 11     11 10 10
+
+[ ] a.) F A D (16) 
+[ ] b.) B A D (16)
+[ ] c.) 9 D A (16)
+[x] d.) 7 D A (16) 
+[ ] e.) OUTRA (JUSTIFICAR)
+
+14.) Sobre o resultado da simplifica��o pela �lgebra de Boole
+     da express�o abaixo, as afirmativas
+
+     (a'+bc)'
+
+     I.   O circuito ter� o mesmo n�mero de portas que um multiplexador.     
+     II.  O mapa de Veitch-Karnaugh ter� dois pares com interse��o.
+     III. A tabela-verdade tem paridade �mpar.
+
+[ ] a.) I e II   s�o verdadeiras
+[ ] b.) I e III  s�o verdadeiras
+[x] c.) II e III s�o verdadeiras
+[ ] d.) todas    s�o verdadeiras
+[ ] e.) OUTRA (JUSTIFICAR)
+
+15.) Considerar a representa��o bin�ria com 6 d�gitos
+     de valores nos formatos em complemento de dois, 
+     complemento de um e sinal e amplitude. A adi��o
+     dos negativos correspondentes aos bin�rios
+     (0)10011 e (0)10001 nesses formatos resultar� 
+     em OVERFLOW 
+
+[x]  a.) apenas em sinal e amplitude
+[ ]  b.) apenas em complemento de 1
+[ ]  c.) apenas em complemento de 2
+[ ]  d.) nos tr�s formatos
+[ ]  e.) OUTRA (JUSTIFICAR)
+
+16.) Sobre a multiplica��o do valor hexadecimal 3A4B
+     por 8, com representa��o em complemento de 2, 
+     e as afirmativas  
+
+     I.   Ter� resultado igual a 32210130 (4).
+     II.  Ter� resultado igual a 164444 (8).
+     III. Ter� resultado negativo.
+
+[ ] a.) Apenas I   � verdadeira.
+[ ] b.) Apenas II  � verdadeira.
+[ ] c.) Apenas III � verdadeira.
+[x] d.) Nenhuma    � verdadeira.
+[ ] e.) OUTRA (JUSTIFICAR)
+
+17.) Considerar a fun��o l�gica dada pelo m�dulo Verilog
+     abaixo
+
+     module f ( output z, input a, input b, input c );
+      wire w1, w2;
+      and AND_1 (z,w1,w2);
+      or  OR__1 (w1,a,b);
+      not NOT_1 (w2,c);
+     endmodule // f
+
+     A descri��o equivalente � 
+ 
+[ ] a.) SoP(2,4,6) 
+[x] b.) PoS(0,3,5,7)
+[ ] c.) _ 1 0 + 0 _ 1 por Quine-McCluskey
+[ ] d.) 00101001 na tabela-verdade BIG-endian
+[ ] e.) OUTRA (JUSTIFICAR)
+
+18.) Se a representa��o de um valor bin�rio de ponto fixo
+     com sinal, e em complemento de 2, for a abaixo     
+         
+     |_|_|_|_|_|.|_|_|_|
+      7 6 5 4 3   2 1 0
+     |S|<----- A ----->|
+
+     I.   -31.500
+     II.  +11.875
+     III. +13.025  
+
+[ ] a.) Apenas I     poder� ser representado.
+[ ] b.) Apenas II    poder� ser representado. 
+[x] c.) Apenas III   poder� ser representado.
+[ ] d.) Nenhum deles poder� ser representado.
+[ ] e.) OUTRA (JUSTIFICAR)
+
+19.) A express�o l�gica implementada
+     pelo circuito abaixo � igual a
+
+            ____               ____
+     0  ---|0   \       c' ---|0   \
+           | MUX |--.         | MUX |--- s
+     c  ---|____/    `--------|____/
+             |                   |
+             a                   b
+
+[ ] a.) s = a c + b'c'
+[x] b.) s = abc + b'c'
+[ ] c.) s = a c + a b + c'
+[ ] d.) s = abc + c'
+[ ] e.) OUTRA (JUSTIFICAR)
+
+20.) A express�o do "vem-um" ("borrow-out")
+     de um subtrator completo � equivalente a
+
+[ ] a.) assign s = ~a&b | ~a&c | ~b&~c; 
+[x] b.) s = (b+c).a' + b^c
+[ ] c.) S = (A'+B).(A'+C).(B'+C')
+[ ] d.) s = nand( nand( nand(a), nand(nand(b),nand(c)) ), nand(b,c) );
+[ ] e.) OUTRA (JUSTIFICAR)
+
+
+___
+
+JUSTIFICATIVAS
+
+2)
+(A+C+D).(A+B+C').(B'+C'+D').(A'+B+C)
+nao vai dar tempo de escrever relacao por relacao,
+     __________________________
+    |ab\cd | 00 | 01 | 11 | 10 |
+    |------|----|----|----|----|
+    | 00   | 0  | 1  | 0  | 0  | 
+    |------|----|----|----|----| 
+    | 01   | 0  | 1  | 0  | 1  |
+    |______|____|____|____|____|
+    | 11   | 1  | 1  | 0  | 1  |
+    |------|----|----|----|----|
+    | 10   | 0  | 0  | 1  | 1  |
+    |______|____|____|____|____|
+
+4) reduz as dependencias das variaveis (c) e (b) pois passa de: 
+(A+C+D).(A+B+C').(B'+C'+D').(A'+B+C) para
+(A + D).(A+C').(B'+C'+D').(A'+B+C)
+C out    B out
+
+
+8) na primeira parte vai ser A | D, pq na quadra (0,4,2,6) o b e c sao fracos
+     __________________________
+    |ab\cd | 00 | 01 | 11 | 10 |
+    |------|----|----|----|----|
+    | 00   | 0  | 1  | 0  | 0  |
+    |------|----|----|----|----|
+    | 01   | 0  | 1  | 0  | 0  |
+    |______|____|____|____|____|
+    | 11   | 1  | 1  | 0  | 1  |
+    |------|----|----|----|----|
+    | 10   | 0  | 0  | 0  | 1  |
+    |______|____|____|____|____|
+
+10) 0 1 _ 0 pois remove o termo C (vira B)
+
+    |ab\cd | 00 | 01 | 11 | 10 |
+    |------|----|----|----|----|
+    | 00   | 0  | 1  | 0  | 0  |
+    |------|----|----|----|----|
+    | 01   | X  | 1  | 0  | 0  |
+    |______|____|____|____|____|
+    | 11   | 1  | 1  | 0  | 1  |
+    |------|----|----|----|----|
+    | 10   | 0  | 0  | 0  | 1  |
+    |______|____|____|____|____|
