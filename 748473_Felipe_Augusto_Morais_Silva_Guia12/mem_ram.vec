@@ -1,0 +1,63 @@
+Address:: x:: 00000000 :: -- contents in hex 00
+Address:: 0:: 00100100 :: -- contents in hex 24
+Address:: 1:: 10000001 :: -- contents in hex 81
+Address:: 2:: 00001001 :: -- contents in hex 09
+Address:: 3:: 01100011 :: -- contents in hex 63
+Address:: 4:: 00001101 :: -- contents in hex 0d
+Address:: 5:: 10001101 :: -- contents in hex 8d
+Address:: 6:: 01100101 :: -- contents in hex 65
+Address:: 7:: 00010010 :: -- contents in hex 12
+Address:: 8:: 00000001 :: -- contents in hex 01
+Address:: 9:: 00001101 :: -- contents in hex 0d
+Address::10:: 01110110 :: -- contents in hex 76
+Address::11:: 00111101 :: -- contents in hex 3d
+Address::12:: 11101101 :: -- contents in hex ed
+Address::13:: 10001100 :: -- contents in hex 8c
+Address::14:: 11111001 :: -- contents in hex f9
+Address::15:: 11000110 :: -- contents in hex c6
+Address::16:: 11000101 :: -- contents in hex c5
+Address::17:: 10101010 :: -- contents in hex aa
+Address::18:: 11100101 :: -- contents in hex e5
+Address::19:: 01110111 :: -- contents in hex 77
+Address::20:: 00010010 :: -- contents in hex 12
+Address::21:: 10001111 :: -- contents in hex 8f
+Address::22:: 11110010 :: -- contents in hex f2
+Address::23:: 11001110 :: -- contents in hex ce
+Address::24:: 11101000 :: -- contents in hex e8
+Address::25:: 11000101 :: -- contents in hex c5
+Address::26:: 01011100 :: -- contents in hex 5c
+Address::27:: 10111101 :: -- contents in hex bd
+Address::28:: 00101101 :: -- contents in hex 2d
+Address::29:: 01100101 :: -- contents in hex 65
+Address::30:: 01100011 :: -- contents in hex 63
+Address::31:: 00001010 :: -- contents in hex 0a
+Address::32:: 10000000 :: -- contents in hex 80
+Address::33:: 00100000 :: -- contents in hex 20
+Address::34:: 10101010 :: -- contents in hex aa
+Address::35:: 10011101 :: -- contents in hex 9d
+Address::36:: 10010110 :: -- contents in hex 96
+Address::37:: 00010011 :: -- contents in hex 13
+Address::38:: 00001101 :: -- contents in hex 0d
+Address::39:: 01010011 :: -- contents in hex 53
+Address::40:: 01101011 :: -- contents in hex 6b
+Address::41:: 11010101 :: -- contents in hex d5
+Address::42:: 00000010 :: -- contents in hex 02
+Address::43:: 10101110 :: -- contents in hex ae
+Address::44:: 00011101 :: -- contents in hex 1d
+Address::45:: 11001111 :: -- contents in hex cf
+Address::46:: 00100011 :: -- contents in hex 23
+Address::47:: 00001010 :: -- contents in hex 0a
+Address::48:: 11001010 :: -- contents in hex ca
+Address::49:: 00111100 :: -- contents in hex 3c
+Address::50:: 11110010 :: -- contents in hex f2
+Address::51:: 10001010 :: -- contents in hex 8a
+Address::52:: 01000001 :: -- contents in hex 41
+Address::53:: 11011000 :: -- contents in hex d8
+Address::54:: 01111000 :: -- contents in hex 78
+Address::55:: 10001001 :: -- contents in hex 89
+Address::56:: 11101011 :: -- contents in hex eb
+Address::57:: 10110110 :: -- contents in hex b6
+Address::58:: 11000110 :: -- contents in hex c6
+Address::59:: 10101110 :: -- contents in hex ae
+Address::60:: 10111100 :: -- contents in hex bc
+Address::61:: 00101010 :: -- contents in hex 2a
