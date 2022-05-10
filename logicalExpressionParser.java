@@ -151,7 +151,7 @@ public class logicalExpressionParser {
 		for(int i = 0; i < charList.size(); i++){
 			sb.append("   " + charList.get(i) + " ");
 		}
-		sb.append("=    a \");");
+		sb.append("=    wire_a \");");
 		return sb.toString();
 	}
 
@@ -174,8 +174,8 @@ public class logicalExpressionParser {
 		String reg = makeReg(list);
 		binaryList = generateGrayCode(variables);	
 		String testCases = divideGrayCode(binaryList, list);
-		String testModule = "module test_f;\n" + reg + "wire a;\n" + makeModule2("f module_test (a", list) + ");\n";
-		String testMonitor = generateMonitor(list) + "= %4b\"" + makeModule2(" ", list) + ", a);";
+		String testModule = "module test_f;\n" + reg + "wire wire_a;\n" + makeModule2("f module_test (wire_a", list) + ");\n";
+		String testMonitor = generateMonitor(list) + "= %4b\"" + makeModule2(" ", list) + ", wire_a);";
 		String testDisplay = generateDisplay(list);
 
 		String final_Result = module + testModule + "initial\nbegin : main\n$display(\"test module\");\n" + testDisplay + "\n" + testMonitor + "\n" + testCases + "end\nendmodule //test";

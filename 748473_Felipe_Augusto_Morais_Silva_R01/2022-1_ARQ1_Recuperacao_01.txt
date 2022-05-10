@@ -1,0 +1,94 @@
+PUC-Minas - ICEI - Ciência da Computação
+Arquitetura de Computadores I - Aula 2022-1_ARQ1_RRH_013
+
+2022-1_ARQ1_Recuperação_01 - Lista Extra (opcional)
+
+01. Determinar as expressões simplificadas equivalentes
+
+a.) SoP(1,5,6,A,B,C,D,E)
+
+b.) PoS(0,2,3,4,7,8,9,F)
+
+02. Determinar as expressões SoP simplificada
+    para o seguinte mapa de Veitch-Karnaugh:
+
+ \cd
+ab   00 01 11 10
+00    1
+01    1  1     1 
+11    1  1     1
+10          1  1
+
+03. Determinar as expressões PoS simplificada
+    para o seguinte mapa de Veitch-Karnaugh:
+
+ \cd
+ab   00 01 11 10
+00       1
+01       1      
+11    1  1     1
+10          1  1
+
+
+04. Determinar a expressão PoS simplificada
+    para o seguinte mapa de Veitch-Karnaugh:
+
+ \cd
+ab   00 01 11 10
+00       1
+01       1     1 
+11    1  x     1
+10          1  1
+
+
+05. Determinar a expressão SoP simplificada em Verilog
+    para o seguinte mapa de Veitch-Karnaugh:
+
+ \cd
+ab   00 01 11 10
+00       1      
+01       1     1
+11    1  1  x  1
+10          1  1
+
+
+06. Determinar a expressão SoP simplificada em Verilog
+    para o seguinte mapa de Veitch-Karnaugh:
+
+ \cd
+ab   00 01 11 10
+00       1      
+01    1  1     1
+11    1  1     1
+10       1  1  1
+
+
+07. Determinar a expressão PoS simplificada em Verilog
+    para o seguinte mapa de Veitch-Karnaugh:
+
+ \cd
+ab   00 01 11 10
+00       1      
+01    1  1      
+11    1  1     1
+10             1
+
+
+Montar os seguintes circuitos no Logisim
+
+08. s = mux ( mux(not(b),not(c),not(a)), 
+              mux(not(a),c,b), 
+              not(c) );
+ 
+09. s = nor (nor(a,b), 
+             nor(b,d));
+
+10. s = nand( nand( 
+                   nand(a,a), 
+                   nand(nand(b,b),
+                        nand(c,c)) 
+                  ), 
+              nand(b,c) 
+            );
+
+
