@@ -4,7 +4,6 @@
 	   INX H
 	   LXI H, 0100 	;HL <- addr(valor2)	//armazena o segundo valor
 	   MOV B,M		;B <- MEM[HL]		//endereco do valor2
-	   SUB M
 	   INX H
 	   LXI H, 0150 	;HL <- addr(valor3) //armazena o terceiro valor
 	   MOV C,M		;C <- MEM[HL]		//endereco do valor3

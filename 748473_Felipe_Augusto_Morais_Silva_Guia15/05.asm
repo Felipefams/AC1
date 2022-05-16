@@ -4,10 +4,12 @@
 	   INX H
 	   LXI H, 0100 	;HL <- addr(valor2)	//armazena o segundo valor
 	   MOV B,M		;B <- MEM[HL]		//endereco do valor2
-	   SUB M
+	   RLC M 		;shift pra esquerda
+	   RLC M		;2x pra multiplicar por 4
 	   INX H
 	   LXI H, 0150 	;HL <- addr(valor3) //armazena o terceiro valor
 	   MOV C,M		;C <- MEM[HL]		//endereco do valor3
+	   RLD M
 	   ADD M
 	   INX H
 	   MOV M,A
