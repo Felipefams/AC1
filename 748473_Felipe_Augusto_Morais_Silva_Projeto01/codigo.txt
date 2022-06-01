@@ -1,0 +1,110 @@
+Questão 4 ->
+letras: a, b, c, d, e.
+
+              XOR
+;----------------------------------------------------------;
+;This program tests logical operation XOR
+Main:      load zero ; acc<-0
+    XOR zero ; acc<-acc&mdr
+    write ; output<-acc
+
+    load one ; acc<-1
+    XOR one ; acc<-acc&mdr
+    write ; output<acc
+
+    stop ; stop
+
+zero: .data 2 0 ; 2-byte location for constant zero
+one:  .data 2 1 ; 2-byte location for constant one
+res:  .data 2 0 ; 2-byte location where result is stored
+
+
+               NOT
+;----------------------------------------------------------;
+;This program tests logical operation NOT
+Main:      load one ; acc<-0
+    NOT one ; acc<-acc&mdr
+    write ; output<-acc
+
+    stop ; stop
+
+zero: .data 2 0 ; 2-byte location for constant zero
+one:  .data 2 1 ; 2-byte location for constant one
+res:  .data 2 0 ; 2-byte location where result is stored
+
+
+             NAND
+;----------------------------------------------------------;
+;This program tests logical operation NAND
+Main:      load zero ; acc<-0
+    NAND zero ; acc<-acc&mdr
+    write ; output<-acc
+
+    load one ; acc<-1
+    NAND one ; acc<-acc&mdr
+    write ; output<acc
+
+    stop ; stop
+
+zero: .data 2 0 ; 2-byte location for constant zero
+one:  .data 2 1 ; 2-byte location for constant one
+res:  .data 2 0 ; 2-byte location where result is
+
+						XNOR using NAND's
+;----------------------------------------------------------;
+
+Main: load zero ; acc<-0
+      NAND zero ; acc<-acc&mdr
+      store tmpa ; output<acc
+      load one ; acc<-1
+      NAND one ; acc<-acc&mdr
+      store tmpb ; output<acc
+
+      load tmpb ; acc<-1
+      NAND tmpb ; acc<-acc&mdr
+      store tmpc
+      load zero ; acc<-1
+      NAND zero ; acc<-acc&mdr
+      store tmpd
+
+      load tmpd ; acc<-1
+      NAND tmpd ; acc<-acc&mdr
+      store tmpe
+      load one ; acc<-1
+      NAND one ; acc<-acc&mdr
+      store tmpf
+
+      load tmpf ; acc<-1
+      NAND tmpf ; acc<-acc&mdr
+      store tmpg
+      load tmph ; acc<-1
+      NAND tmph ; acc<-acc&mdr
+      write
+      stop ; stop
+
+zero: .data 2 0 ; 2-byte location for constant zero
+one: .data 2 1 ; 2-byte location for constant one
+
+tmpa: .data 2 0
+tmpb: .data 2 0
+tmpc: .data 2 0
+tmpd: .data 2 0
+tmpe: .data 2 0
+tmpf: .data 2 0
+tmpg: .data 2 0
+tmph: .data 2 0
+
+res: .data 2 0 ; 2-byte location where result is stored
+
+						fibonacci	
+;-----------------------------------------------------;
+
+
+
+
+
+
+
+
+
+
