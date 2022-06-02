@@ -98,13 +98,38 @@ res: .data 2 0 ; 2-byte location where result is stored
 
 						fibonacci	
 ;-----------------------------------------------------;
+; Fibonacci
 
 
+Start:    load  zero  	; read n -> acc
+    jmpn  Done      	; jump to Done if n < 0.
+    add   sum      		; add sum to the acc
+    store sum    		; store the new sum
+    jump  StepDois    	; go back & read in next number
 
+StepDois:load  one      ; read n -> acc
+     jmpn  Done      	; jump to Done if n < 0.
+     add   sum      	; add sum to the acc
+     store sum     		; store the new sum
+     jump  StepTres    	; go back & read in next number
 
+StepTres:load  one      ; read n -> acc
+     jmpn  Done      	; jump to Done if n < 0.
+     add   sum      	; add sum to the acc
+     store sum     		; store the new sum
+     jump  StepQuatro   ; go back & read in next number
 
+StepQuatro:load  two    ; read n -> acc
+     jmpn  Done      	; jump to Done if n < 0.
+     add   sum      	; add sum to the acc
+     store sum     		; store the new sum
+     jump  StepQuatro   ; go back & read in next number
 
+Done:    load  sum   	; load the final sum
+    write         		; write the final sum
+    stop          		; stop
 
-
-
-
+sum:    .data 4 00 		; 2-byte location where sum is stored
+zero:    .data 4 00  	; 2-byte location where sum is stored
+one:    .data 4 01 		; 2-byte location where sum is stored
+two:    .data 4 10 		; 2-byte location where sum is stored
