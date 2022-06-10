@@ -1,0 +1,363 @@
+Nome: Felipe Augusto Morais Silva  				  Matrícula: 748473
+                                                             a  b  c  d  e  f
+
+Instruções                                  Tempo previsto: 110m + Extra:  20m
+
+Preencher e enviar para a Tarefa A02 no Canvas.
+Haverá apenas três (3) tentativas para postar as respostas.
+Favor enviar, pelo menos uma vez, antes de se completar 110m.
+
+Escolher apenas opção considerada correta.
+Se não houver, JUSTIFICAR suas respostas ao final.
+
+Respostas
+Favor não alterar o formato do gabarito.
+
+01  02	03  04  05  06  07  08	09  10
+[b] [a] [b] [a] [a] [e] [a] [d] [d] [b]
+
+11  12	13  14  15  16	17  18	19  20
+[d] [c] [d] [b] [e] [c] [e] [c] [a] [b]
+
+___
+
+Questão 01:
+Se dois flip-flop’s (FFa e FFb) forem combinados 
+de modo que Jb = Qa e Kb = Qa’, e Ja = Ka = 1, 
+após CLEAR em ambos, na primeira subida de clock,
+quais serão os valores de Qa e Qb
+
+[ ] a. 11
+[x] b. 10
+[ ] c. 01
+[ ] d. 00
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 02:
+Se dois flip-flop’s (FFa e FFb) forem combinados 
+de modo que Ja = Ka = 1 e Tb = Qa', 
+após CLEAR em ambos, na primeira subida de clock, 
+quais serão os valores de Qa e Qb
+
+[x] a. 11
+[ ] b. 10
+[ ] c. 01
+[ ] d. 00
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 03:
+Se dois flip-flop’s (FFa e FFb) forem combinados 
+de modo que Ja = Ka = 1 e Tb = Qa, 
+após CLEAR em ambos, na primeira subida de clock,
+quais serão os valores de Qa e Qb
+
+[ ] a. 11
+[x] b. 10
+[ ] c. 01
+[ ] d. 00
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 04:
+Se dois flip-flop’s forem combinados de modo que 
+Ja = Ka = 1 e Tb = NAND(Qa,CLEAR'), 
+após CLEAR em ambos, na primeira subida de clock,
+quais serão os valores de Qa e Qb
+
+[x] a. 11
+[ ] b. 10
+[ ] c. 01
+[ ] d. 00
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 05:
+Se dois flip-flop’s forem combinados de modo que 
+Ta = 1 e Jb = Kb = AND(Qa',NAND(Qa,Qb)), 
+após CLEAR em ambos, na segunda subida de clock,
+quais serão os valores de Qa e Qb
+
+[x] a. 11
+[ ] b. 10
+[ ] c. 01
+[ ] d. 00
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 06:
+Um flip-flop está montado tal que R = XOR(Q, CLEAR'),
+S = R' e a situação inicial, após CLEAR, é Q = 0 
+as próximas três saídas serão
+
+[ ] a. 1-0-1
+[ ] b. 1-1-0
+[ ] c. 0-1-0
+[ ] d. 0-1-1
+[x] e. OUTRA (JUSTIFICAR)
+
+Questão 07:
+Três flip-flops estão montados em sequência tal que
+Ta = 1, Tb = Qa e Tc = Qb, 
+as saídas atuais são Qa = 1, Qb = 1, Qc = 0. 
+Após dois clocks as saídas serão
+
+[x] a. 1-1-1
+[ ] b. 1-0-1
+[ ] c. 1-0-0
+[ ] d. 0-1-1
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 08:
+Três flip-flops estão montados em sequência tal que
+Ja = Ka = 1, Jb = Kb = Qa' , Jc = Kc = Qb', 
+as saídas atuais são Qa = 1, Qb = 0, Qc = 0. 
+Após dois clocks as saídas serão
+
+[ ] a. 0-1-1
+[ ] b. 0-1-0
+[ ] c. 1-0-1
+[x] d. 1-1-0
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 09:
+Dado o circuito sequencial com um flip-flop JaKa e
+outro Tb, sensíveis à borda de subida do clock,
+e a seguinte variações de sinais, após CLR:
+           ___     ___     ___     ___
+       ___|   |___|   |___|   |___|   |___ CLK
+       _                                  
+        |_________________________________ CLR
+         ___         _______   _          
+       _|   |_______|       |_| |_________ J
+                       _____   _______
+       _______________|     |_|       |___ K
+         _________________                                 
+       _|                 |_______________ Qa
+                          
+A saída esperada para Tb = K será igual a 
+                           ___________       
+[ ] a. ___________________|           |___ Qb
+                           _______          
+[ ] b. ___________________|       |_______ Qb
+                           _   ___          
+[ ] c. ___________________| |_|   |_______ Qb
+                           _   _______       
+[x] d. ___________________| |_|       |___ Qb
+                                            
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 10:
+Considerar o seguinte módulo Verilog
+
+module FF_D ( output Q, input D, input CLK, input CLR );
+ reg Q;
+ always @ ( posedge CLK or CLR )
+    ______________________
+endmodule
+
+A instrução de comportamento do flip-flop D 
+que a completa a definição é igual a 
+
+[ ] a. assign Q <= (CLR) ? 0 : D;
+[x] b. assign Q  = (CLR) ? 0 : D;
+[ ] c. Q  = (CLR) ? 0 : D;
+[ ] d. Q <= (CLR) ? 0 : D;
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 11:
+Uma memória será construída para armazenar 16MBytes
+qual a largura mínima em bits do barramento de endereços?
+
+[ ] a. 21
+[ ] b. 22
+[ ] c. 23
+[x] d. 24
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 12:
+Uma memória será construída para armazenar 16kBytes
+quantos módulos de memória 1x4 serão necessários?
+
+[ ] a. 08k
+[ ] b. 16k
+[x] c. 32k
+[ ] d. 64k
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 13:
+Considerar o seguinte autômato finito
+
+now input next
+>00   0    00
+ 00   1    01
+ 01   0    10
+ 01   1    00
+ 10   0    10
+ 10   1    11
+
+e as afirmativas
+
+I   - Reconhecedor de qualquer sequência iniciada e terminada em 1.
+II  - Reconhecedor de sequência com dupla de 11 seguidos
+III - Reconhecedor de qualquer sequência alternada iniciada em 0. 
+
+[ ] a. Apenas I   é verdadeira
+[ ] b. Apenas II  é verdadeira
+[ ] c. Apenas III é verdadeira
+[x] d. Nenhuma    é verdadeira
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 14:
+Considerar o seguinte autômato de pilha
+
+now input stack output next
+>00   0     Z     Z     00
+ 00   1     Z     0     01
+ 01   0     0     Z     00
+ 01   1     0     0     10
+ 10   0     0     Z     00
+ 10   1     0     1     11
+
+e as afirmativas
+
+I   - Reconhecedor de sequência com três 1 consecutivos.
+II  - Terminará sempre que houver dupla de 1's.
+III - Não reconhecer é igual a 0 ou Z.
+ 
+[ ] a. I e  II  são verdadeiras 
+[x] b. I e  III são verdadeiras
+[ ] c. II e III são verdadeiras
+[ ] d. todas    são verdadeiras
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 15:
+Considerar a seguinte maquina de Turing
+
+now input output move  next
+>00   0     0     R     00
+ 00   1     0     R     01
+ 00   #     #     S     00
+ 01   0     1     L     10
+ 01   1     1     R     01
+ 01   #     #     L     10
+ 10   0     0     L     10
+ 10   1     0     L     10
+ 10   #     #     S     10
+
+e as afirmativas
+
+I   - Reconhecedor de sequência de 1's consecutivos.
+II  - Terminará sempre em 1, se tiver algum 1 na entrada.
+III - Terminará sempre em 0, se não tiver algum 1 na entrada.
+ 
+[ ] a. I e  II  são verdadeiras 
+[ ] b. I e  III são verdadeiras
+[ ] c. II e III são verdadeiras
+[ ] d. todas    são verdadeiras
+[x] e. OUTRA (JUSTIFICAR)
+
+Questão 16:
+Em comparação com os registradores e a memória cache L1
+
+[ ] a. L2 é mais lenta que os primeiros e mais rápida que a segunda.
+[ ] b. L2 é mais cara  que os primeiros e menor       que a segunda.
+[x] c. L2 é maior      que os primeiros e mais barata que a segunda.
+[ ] d. L2 é mais lenta que os primeiros e mais cara   que a segunda.
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 17:
+Supor o programa para o 8085
+
+;Program
+      JMP main
+;Data
+A1:   DB A6h
+A2:   DB 5Ah
+A3:   DB 00h
+A4:   DB 00h
+;Code
+main: NOP    ;            
+      LDA A1 ; A = MEM[A1]
+MOV   B,  A  ; B = A      
+      LDA A2 ; A = MEM[A2]
+      ADD B  ; A = A+B    
+      STA A3 ; MEM[A3] = A
+end:  HLT    ;            
+
+Dadas as afirmativas abaixo sobre o
+resultado da operação aritmética:
+
+I   - Terá o Carry  Flag igual a 1.
+II  - Terá o Signal Flag igual a 1.
+III - Terá o Parity Flag igual a 1.
+
+[ ] a. I  e II  são verdadeiras
+[ ] b. I  e III são verdadeiras
+[ ] c. II e III são verdadeiras
+[ ] d. todas    são verdadeiras
+[x] e. OUTRA (JUSTIFICAR)
+
+Questão 18:
+Relacionar as instruções do 8085 com
+seus respectivos modos de endereçamento
+
+A. CMA          1. imediato
+B. MVI C,00h    2. implícito
+C. LDA 000Ah    3. endereçamento direto
+
+[ ] a. A-1, B-2, C-3 
+[ ] b. A-2, B-3, C-2
+[x] c. A-2, B-1, C-3
+[ ] d. A-3, B-2, C-1
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 19:
+Supor o programa para o 8085
+
+;Program
+      JMP main
+;Data
+A1:   DB 00h
+A2:   DB 00h
+A3:   DB 00h
+A4:   DB 00h
+;Code
+main: NOP           ;
+      LXI   H,ABCDh ; HL = ABCDh  
+      PUSH  H       ; push(HL)    
+      POP   D       ; DE = pop( ) 
+      LXI   H,6789h ; HL = 6789h  
+      XCHG          ; swap(HL,DE) 
+      SHLD  A1      ; MEM[A1] = HL
+      XCHG          ; swap(HL,DE) 
+      SHLD  A3      ; MEM[A3] = HL
+end:  HLT           ;             
+
+O resultado armazenado na memória
+será igual a 
+
+[x] a. CD	AB	89	67
+[ ] b. AB	CD	67	89
+[ ] c. 89	67	CD	AB
+[ ] d. 67	89	AB	CD
+[ ] e. OUTRA (JUSTIFICAR)
+
+Questão 20:
+Se for calculado o próximo Fibonacci depois
+de 89 (BCD) no 8085, como um byte de representação,
+e a instrução DAA for aplicada, o resultado (BCD)
+armazenado na memória será 
+ 
+[ ] a. DE 
+[x] b. 90
+[ ] c. 61 
+[ ] d. 44 
+[ ] e. OUTRA (JUSTIFICAR)
+
+___
+
+JUSTIFICATIVAS
+
+6- deu 0 em todas, 0-0-0. Pois nao ha mudanca depois do clear.
+
+15- apenas a opcao 1 eh verdadeira
+
+17- apenas a opcao 3 eh verdadeira, pois 1 tera o carry flag igual a 0
+e 2 tera signal flag igual a 0
