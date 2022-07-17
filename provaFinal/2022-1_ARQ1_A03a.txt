@@ -1,0 +1,460 @@
+Pontifícia Universidade Católica de Minas Gerais
+Curso de Ciência da Computação
+AC1 - AVALIAÇÃO 03 -  Data: 17/06/2022
+
+Nome: Felipe Augusto Morais Silva  Matrícula: 748473
+                                                         a  b  c  d  e  f
+
+Instruções                              Tempo previsto: 110m + Extra:  20m
+
+Preencher e enviar para a Tarefa A03 no Canvas.
+Haverá apenas três (3) tentativas para postar as respostas.
+Favor enviar, pelo menos uma vez, antes de se completar 110m.
+
+Escolher apenas opção considerada correta.
+Se não houver, JUSTIFICAR suas respostas ao final.
+
+Respostas
+Favor não alterar o formato do gabarito.
+
+01  02	03  04  05  06  07  08	09  10
+[d] [c] [d] [a] [a] [c] [c] [d] [a] [a]
+
+11  12	13  14  15  16	17  18	19  20
+[d] [c] [a] [a] [d] [c] [d] [d] [c] [b]
+
+21  22	23  24  25  ___ ___ ___ ___ ___
+[b] [a] [b] [c] [a] [ ] [ ] [ ] [ ] [ ]
+
+
+___
+
+Questões
+
+01.) Sobre os conjuntos de instruções CISC e RISC
+     e as afirmativas abaixo
+
+I   - RISC explora mais o paralelismo.
+II  - CISC oferece mais modos de endereçamento.
+III - RISC possui compiladores mais complexos
+
+     pode-se afirmar que
+
+[ ] a.) apenas I   é verdadeira
+[ ] b.) apenas II  é verdadeira
+[ ] c.) apenas III é verdadeira
+[x] d.) todas    são verdadeiras
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+02.) "Stack Machine" é um modelo computacional no qual 
+      as instruções lidam com operandos e resultados em pilha.
+      As afirmativas abaixo relacionam-se às máquinas desse tipo:
+
+      I   - Compiladores são mais complexos para se construir.
+      II  - O acesso aos operandos é rápido.
+      III - Operações aritméticas dispensam a busca de operandos.
+
+    Após a análise dessas afirmativas pode-se concluir que 
+
+[ ] a.) I  e II     são válidas
+[ ] b.) I  e III    são válidas
+[x] c.) II e III    são válidas
+[ ] d.) I, II e III sao válidas
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+03.) Com relação ao formato de instrução abaixo
+     para operar um registrador com valor na memória,
+     pode-se afirmar que ___
+
+    +-----------------------------------------------+
+    | instrucao | registrador |     endereco        |
+    +-----------------------------------------------+
+          5           3                8
+
+    I   - refere-se ao modo de endereçamento imediato.
+
+    II  - a quantidade máxima de posições de memória
+          endereçáveis é de 256 Bytes.
+
+    III - o tamanho do banco de registradores é igual a 8.
+
+[ ] a.) apenas I   é verdadeira
+[ ] b.) apenas II  é verdadeira
+[ ] c.) apenas III é verdadeira
+[x] d.) todas    são verdadeiras
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+04.) As afirmativas abaixo tratam de unidades de controle 
+     do tipo "softwired".
+
+     I   - São comuns em arquiteturas do tipo CISC.
+     II  - O controle é mais lento do que a forma "hardwired".
+     III - A lógica de circuitos é fixa e 
+           dificulta o acréscimo de novas instruções.
+
+    É correto afirmar que 
+
+[x] a.) I  e II     são verdadeiras
+[ ] b.) I  e III    são verdadeiras
+[ ] c.) II e III    são verdadeiras
+[ ] d.) I, II e III são verdadeiras
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+05.) Sobre máquinas virtuais pode-se afirmar que
+
+[x] a.) possuem bibliotecas compartilhadas entre linguagens
+[ ] b.) possuem restrições à mobilidade
+[ ] c.) possuem melhor desempenho que máquinas reais
+[ ] d.) possuem previsões de desvios mais simples
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+06.) Com relação às afirmativas abaixo que se referem
+     a dispositivos lógicos programáveis simples (SPLD's)
+     pode-se afirmar que ___
+
+     I   - PLA's são mais eficientes que memórias PROM's.
+     II  - PLA's são mais simples ques as PAL's 
+           para se programar. 
+     III - PLA's são mais versáteis por possuir 
+           AND's e OR's programáveis.
+
+[ ] a.) apenas I  e II  estão corretas
+[ ] b.) apenas I  e III estão corretas
+[x] c.) apenas II e III estão corretas
+[ ] d.) todas           estão corretas
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+07.) A máquina do tipo pilha IJVM não possui
+     instrução NOT, mas ela pode ser obtida por
+
+[ ] a.) 
+        ILOAD x
+        DUP
+        IAND
+
+[ ] b.) 
+        BIPUSH 0x01h
+        ILOAD  x
+        IAND
+
+[x] c.)
+        BIPUSH 0xFFh
+        ILOAD  x
+        ISUB        
+
+[ ] d.) 
+        BIPUSH 0xFEh
+        ILOAD  x
+        ISUB       
+
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+
+Para as questões 08, 09 e 10,
+supor o código abaixo para o 8085.
+
+MAIN:  LXI  H,000Dh ; HL = dado
+       MVI  B,04h   ; B  = divisor
+       MVI  C,08h   ; C  = 8 
+LOOP:  DAD  H       ; HL = HL+HL
+       MOV  A,H     ; A  = H
+       SUB  B       ; A  = A-B
+       ___  L1      ; desvio (1)
+       MOV  H,A     ; H  = A
+       INR  L       ; L  = L+1
+L1:    DCR  C       ; C  = C-1
+       ___  LOOP    ; desvio (2)
+       SHLD 00D0h   ; store results
+       HLT
+
+08.) Os desvios (1) e (2) correspondem a
+
+[ ] a.) JNC - JNZ
+[ ] b.) JNC - JZ
+[ ] c.) JC  - JZ
+[x] d.) JC  - JNZ
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+09.) Se for desejado apenas o quociente, 
+     a instrução SHLD 00D0h deverá ser
+     substituída por
+
+[x] a.)
+        MOV A,L
+        STA 00D0h
+[ ] b.) 
+        MOV A,H
+        STA 00D0h
+[ ] c.) 
+        MOV A,C
+        STA 00D0h
+[ ] d.) 
+        MOV A,B
+        STA 00D0h
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+10.) A instrução DAD H poderia ser 
+     substituída por
+
+     MOV  D,H     ;
+     MOV  E,L     ;
+     MOV  A,E     ;
+     ADD  L       ;
+     MOV  L,A     ;
+     MOV  A,D     ;
+     ________     ; instrucao (1)
+     MOV  H,A     ;  
+
+     e as instrução (1) seria
+
+[x] a.) ADD  H
+[ ] b.) ADC  H    
+[ ] c.) ADI  H
+[ ] d.) ACI  H
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+11.) O autômato finito abaixo
+
+now  input  next
+>00    0    01
+ 00    1    00
+ 01    0    00
+ 01    1    10
+ 10    0    11+
+ 10    1    10
+
+     chegará ao estado final apenas 
+     no seguinte teste:
+
+[ ] a.) 00001000
+[ ] b.) 00011111
+[ ] c.) 10000011
+[x] d.) 11101110
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+12.) A máquina de Mealy abaixo
+
+now  input  next  output
+>00    0     01     0
+ 00    1     00     0
+ 01    0     10     0
+ 01    1     01     0
+ 10    0     11     1
+ 10    1     10     0
+
+     é capaz de reconhecer apenas
+     no seguinte teste:
+
+[ ] a.) 00111111
+[ ] b.) 01111011
+[x] c.) 11111000
+[ ] d.) 11111111
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+13.) Se à máquina de Mealy da questão anterior
+     forem acrescidas as regras
+
+now  input  next  output
+ 11    0     01     0
+ 11    1     00     0
+
+     será capaz de encontrar duas vezes
+     a sequência no seguinte teste:
+     
+[x] a.) 00100010
+[ ] b.) 00100110
+[ ] c.) 00111100
+[ ] d.) 01110111
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+14.) A máquina de Moore abaixo
+
+now  input  next  
+>000   0    001   
+ 000   1    000   
+ 001   0    010   
+ 001   1    001   
+ 010   0    010   
+ 010   1    111   
+
+     é capaz de reconhecer apenas
+     no seguinte teste:
+
+[x] a.) 11011001
+[ ] b.) 11101100
+[ ] c.) 11110000
+[ ] d.) 11111011
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+15.) Considerar o código (C) abaixo para se obter 
+    a soma de valores em uma matriz com 8x8 elementos.
+
+    int sumOfArray ( int n, int matrix[ ][8] )
+    {
+        int x, y, sum = 0;
+        for ( x = 0; x < n; x=x+1 )
+            for ( y = 0; y < 8; y=y+1 )
+                sum = sum + matrix[i][j];
+        return ( sum );
+    }
+
+    Supor uma cache com um tamanho de bloco igual a 
+    4 palavras de 4 bytes cada. 
+    A quantidade de mudanças de conteúdo da cache será igual a
+
+[ ] a.) 2
+[ ] b.) 4
+[ ] c.) 8
+[x] d.) 16
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+16.) Um processador será projetado para ter um conjunto
+     de 128 instruções com um operando. Se sua memória
+     for de 512 palavras, e cada palavra o mesmo tamanho
+     do barramento de dados, quantos bits terão
+     o PC e o MAR?
+
+[ ] a.)  7
+[ ] b.)  8
+[x] c.)  9
+[ ] d.) 10
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+17.) Considerar um contador de Johnson de 4 estágios
+    com valor inicial igual a 0110. A sequência de 
+    contagem a cada clock será igual a 
+
+[ ] a.) 6,3,9,12,5,2,10,13
+[ ] b.) 6,11,5,2,9,4,10,13
+[ ] c.) 5,2,1,0,15,14,13,12
+[x] d.) 5,2,9,4,10,13,6,11
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+18.) Dada a descrição do módulo Verilog abaixo
+
+    module circuit_01 ( output p, output q, input a, input b );
+      wire w1,w2,w3,w4;
+      nand N1 ( w1,  b,  b );
+      nand N2 ( w2,  a,  a );
+      nand N3 ( w3, w1,  a );
+      nand N4 ( w4, w2,  b );
+      nand N5 (  q, w3, w4 );
+      nand N6 (  p, w4, w4 );
+    endmodule
+
+    Se as entradas forem a=0 e b=1, 
+    as saídas p e q serão respectivamente iguais a 
+
+[ ] a.) 00
+[ ] b.) 01
+[ ] c.) 10
+[x] d.) 11
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+19.) Dada a descrição do módulo Verilog abaixo
+
+    module circuit_01 ( output p, output q, input a, input b );
+      wire w1,w2,w3,w4;
+      nand N1 ( w1,  b,  b );
+      nand N2 ( w2,  a,  a );
+      nand N3 ( w3, w1,  a );
+      nand N4 ( w4, w2,  b );
+      nand N5 (  q, w3, w4 );
+      nand N6 (  p, w5, w5 );
+      nand N7 ( w5,  a,  b );
+    endmodule
+
+    Se as entradas forem a=1 e b=1, 
+    as saídas p e q serão respectivamente iguais a 
+
+[ ] a.) 00
+[ ] b.) 01
+[x] c.) 10
+[ ] d.) 11
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+20.) Dada a expressão SoP (a,b,c,d) = {0,2,8,9,A,B,D,F}
+     sua simplificação é independente da variável __ .
+
+[ ] a.) d
+[x] b.) c
+[ ] c.) b
+[ ] d.) a
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+21.) Dada a expressão SoP (a,b,c,d) = {0,2,8,9,A,B,D,F}
+     sua expressão PoS (A,B,C,D) equivalente minimizada
+     por Quine-McCluskey é igual a __
+     
+[ ] a.) (0+_+1+_).(_+0+1+_)
+[x] b.) (0+_+_+1).(_+1+_+0)
+[ ] c.) (0+1+_+_).(_+_+1+0)
+[ ] d.) (1+_+_+0).(_+1+0+_)
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+22.) Dada a expressão SoP (a,b,c,d) = {0,2,8,9,A,B,D,F},
+     acrescentada dos mintermos {4,6},
+     sua expressão equivalente minimizada
+     pelo mapa de Veitch-Karnaugh
+
+     I   - A nova expressão por mintermos terá uma quadra a mais.
+     II  - A nova expressão não dependerá de uma variável.
+     III - Haverá dois MAXTERMOS isolados.
+
+[x] a.) I  e II     são verdadeiras
+[ ] b.) I  e III    são verdadeiras
+[ ] c.) II e III    são verdadeiras
+[ ] d.) I, II e III são verdadeiras
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+23.) A simplificação pela álgebra de Boole da expressão
+     ((a+b).(b+c))'+ab'c
+
+     I   - Terá uma quadra circular no mapa de Veitch-Karnaugh.
+     II  - A expressão simplificada não dependerá de duas variáveis.
+     III - Poderá ser expressa por uma porta NOR.
+
+[ ] a.) I  e II     são verdadeiras
+[x] b.) I  e III    são verdadeiras
+[ ] c.) II e III    são verdadeiras
+[ ] d.) I, II e III são verdadeiras
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+24.) Um fabricante de máquinas para casinos recebeu
+     uma encomenda para desenvolver um autômato para
+     jogar Blackjack (Vinte-e-Um), com um baralho
+     aleatório de 52 cartas. As ações do jogador,
+     após receber duas cartas podem ser: ver mais
+     uma carta, parar, dobrar a aposta e ver mais
+     uma carta, pular a próxima carta, desistir e
+     mostrar a soma. O projeto dessa máquina,
+     considerando o uso de todo o baralho, deverá 
+     ter uma instrução de saída com valor imediato.
+     Se tiver (x) bits para a operação e 
+     (y) bits para o operando, o tamanho total
+     em bits da soma (x+y) será igual a
+
+[ ] a.) 02
+[ ] b.) 04
+[x] c.) 08
+[ ] d.) 16
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+25.) Dada a expressão por MAXTERMOS
+
+     F(A,B,C,D) = (A'+C').(B'+D).(A+B+C)
+         
+     A tabela-verdade equivalente BIG-Endian
+     é igual a 
+                               
+[x] a.) 0011 0101 1100 0100
+[ ] b.) 0010 0101 1110 0110
+[ ] c.) 0110 1110 1101 0010
+[ ] d.) 0010 0011 0101 0011
+[ ] e.) OUTRA (NECESSÁRIO JUSTIFICAR)
+
+____________________
+
+JUSTIFICATIVAS
+____________________
+

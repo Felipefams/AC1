@@ -160,7 +160,7 @@ public class logicalExpressionParser {
 		// so basically we are making a list with the variable names the user is using
 		List<Character> list = new ArrayList<Character>();
 		List<String> binaryList = new ArrayList<>();
-		System.out.println("logical expression: ");
+		System.out.println("input logical expression (and = &, not = ~, or = | ): ");
 		String expr = fr.nextLine();
 		System.out.println("filename(with .v at the end):");
 		String filename = fr.next();

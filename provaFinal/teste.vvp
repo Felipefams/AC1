@@ -1,0 +1,63 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/ivl/system.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/ivl/va_math.vpi";
+S_0x557be90c7cb0 .scope module, "test_f" "test_f" 2 12;
+ .timescale 0 0;
+v0x557be90d9800_0 .var "a", 0 0;
+v0x557be90d98c0_0 .var "b", 0 0;
+v0x557be90d9960_0 .net "wire_p", 0 0, L_0x557be90d9f90;  1 drivers
+v0x557be90d9a60_0 .net "wire_q", 0 0, L_0x557be90d9e80;  1 drivers
+S_0x557be90c7e40 .scope begin, "main" "main" 2 19, 2 19 0, S_0x557be90c7cb0;
+ .timescale 0 0;
+S_0x557be90c5010 .scope module, "module_test" "circuit_01" 2 17, 2 1 0, S_0x557be90c7cb0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "p";
+    .port_info 1 /OUTPUT 1 "q";
+    .port_info 2 /INPUT 1 "a";
+    .port_info 3 /INPUT 1 "b";
+L_0x557be90d9b30 .functor NAND 1, v0x557be90d98c0_0, v0x557be90d98c0_0, C4<1>, C4<1>;
+L_0x557be90d9bd0 .functor NAND 1, v0x557be90d9800_0, v0x557be90d9800_0, C4<1>, C4<1>;
+L_0x557be90d9c90 .functor NAND 1, L_0x557be90d9b30, v0x557be90d9800_0, C4<1>, C4<1>;
+L_0x557be90d9d50 .functor NAND 1, L_0x557be90d9bd0, v0x557be90d98c0_0, C4<1>, C4<1>;
+L_0x557be90d9e80 .functor NAND 1, L_0x557be90d9c90, L_0x557be90d9d50, C4<1>, C4<1>;
+L_0x557be90d9f90 .functor NAND 1, L_0x557be90da0e0, L_0x557be90da0e0, C4<1>, C4<1>;
+L_0x557be90da0e0 .functor NAND 1, v0x557be90d9800_0, v0x557be90d98c0_0, C4<1>, C4<1>;
+v0x557be90c5260_0 .net "a", 0 0, v0x557be90d9800_0;  1 drivers
+v0x557be90d9150_0 .net "b", 0 0, v0x557be90d98c0_0;  1 drivers
+v0x557be90d9210_0 .net "p", 0 0, L_0x557be90d9f90;  alias, 1 drivers
+v0x557be90d92b0_0 .net "q", 0 0, L_0x557be90d9e80;  alias, 1 drivers
+v0x557be90d9370_0 .net "w1", 0 0, L_0x557be90d9b30;  1 drivers
+v0x557be90d9480_0 .net "w2", 0 0, L_0x557be90d9bd0;  1 drivers
+v0x557be90d9540_0 .net "w3", 0 0, L_0x557be90d9c90;  1 drivers
+v0x557be90d9600_0 .net "w4", 0 0, L_0x557be90d9d50;  1 drivers
+v0x557be90d96c0_0 .net "w5", 0 0, L_0x557be90da0e0;  1 drivers
+    .scope S_0x557be90c7cb0;
+T_0 ;
+    %fork t_1, S_0x557be90c7e40;
+    %jmp t_0;
+    .scope S_0x557be90c7e40;
+t_1 ;
+    %vpi_call 2 20 "$display", "test module" {0 0 0};
+    %vpi_call 2 21 "$display", "    a    c    b =    wire_p \011wire_q" {0 0 0};
+    %vpi_call 2 22 "$monitor", " %4b %4b ", v0x557be90d9960_0, v0x557be90d9a60_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x557be90d9800_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x557be90d98c0_0, 0, 1;
+    %end;
+    .scope S_0x557be90c7cb0;
+t_0 %join;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "teste.v";
